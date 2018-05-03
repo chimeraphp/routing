@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Routing;
+namespace Chimera\Routing;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Routing\Handler;
+namespace Chimera\Routing\Handler;
 
+use Chimera\ExecuteCommand;
+use Chimera\ExecuteQuery;
+use Chimera\IdentifierGenerator;
+use Chimera\Routing\HttpRequest;
+use Chimera\Routing\UriGenerator;
 use Fig\Http\Message\StatusCodeInterface;
-use Lcobucci\Chimera\ExecuteCommand;
-use Lcobucci\Chimera\ExecuteQuery;
-use Lcobucci\Chimera\IdentifierGenerator;
-use Lcobucci\Chimera\Routing\HttpRequest;
-use Lcobucci\Chimera\Routing\UriGenerator;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Routing;
+namespace Chimera\Routing;
 
-use Lcobucci\Chimera\Input;
+use Chimera\Input;
 use Psr\Http\Message\ServerRequestInterface;
 use function assert;
 use function is_array;

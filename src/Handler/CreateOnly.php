@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Routing\Handler;
+namespace Chimera\Routing\Handler;
 
-use Lcobucci\Chimera\ExecuteCommand;
-use Lcobucci\Chimera\IdentifierGenerator;
-use Lcobucci\Chimera\Routing\HttpRequest;
-use Lcobucci\Chimera\Routing\UriGenerator;
+use Chimera\ExecuteCommand;
+use Chimera\IdentifierGenerator;
+use Chimera\Routing\HttpRequest;
+use Chimera\Routing\UriGenerator;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

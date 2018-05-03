@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Routing\Handler;
+namespace Chimera\Routing\Handler;
 
-use Lcobucci\Chimera\ExecuteCommand;
-use Lcobucci\Chimera\Routing\HttpRequest;
+use Chimera\ExecuteCommand;
+use Chimera\Routing\HttpRequest;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;

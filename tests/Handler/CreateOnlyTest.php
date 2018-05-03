@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Routing\Tests\Handler;
+namespace Chimera\Routing\Tests\Handler;
 
+use Chimera\ExecuteCommand;
+use Chimera\IdentifierGenerator;
+use Chimera\MessageCreator;
+use Chimera\Routing\Handler\CreateOnly;
+use Chimera\Routing\UriGenerator;
+use Chimera\ServiceBus;
 use Fig\Http\Message\StatusCodeInterface;
-use Lcobucci\Chimera\ExecuteCommand;
-use Lcobucci\Chimera\IdentifierGenerator;
-use Lcobucci\Chimera\MessageCreator;
-use Lcobucci\Chimera\Routing\Handler\CreateOnly;
-use Lcobucci\Chimera\Routing\UriGenerator;
-use Lcobucci\Chimera\ServiceBus;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use Middlewares\Utils\Factory;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 use Zend\Diactoros\ServerRequest;
 
 /**
- * @coversDefaultClass \Lcobucci\Chimera\Routing\Handler\CreateOnly
+ * @coversDefaultClass \Chimera\Routing\Handler\CreateOnly
  */
 final class CreateOnlyTest extends TestCase
 {
@@ -59,7 +59,7 @@ final class CreateOnlyTest extends TestCase
      * @covers ::handle()
      * @covers ::generateResponse()
      *
-     * @uses \Lcobucci\Chimera\Routing\HttpRequest
+     * @uses \Chimera\Routing\HttpRequest
      */
     public function handleShouldExecuteTheCommandAndReturnAnEmptyResponse(): void
     {

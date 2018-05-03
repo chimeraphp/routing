@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Routing\Tests;
+namespace Chimera\Routing\Tests;
 
-use Lcobucci\Chimera\Routing\HttpRequest;
-use Lcobucci\Chimera\Routing\RouteParamsExtraction;
+use Chimera\Routing\HttpRequest;
+use Chimera\Routing\RouteParamsExtraction;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\ServerRequest;
 
 /**
- * @coversDefaultClass \Lcobucci\Chimera\Routing\HttpRequest
+ * @coversDefaultClass \Chimera\Routing\HttpRequest
  */
 final class HttpRequestTest extends TestCase
 {

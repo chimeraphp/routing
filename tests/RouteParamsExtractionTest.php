@@ -1,17 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace Lcobucci\Chimera\Routing\Tests;
+namespace Chimera\Routing\Tests;
 
-use Lcobucci\Chimera\Routing\RouteParamsExtraction;
-use Lcobucci\Chimera\Routing\RouteParamsExtractor;
+use Chimera\Routing\RouteParamsExtraction;
+use Chimera\Routing\RouteParamsExtractor;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 
 /**
- * @coversDefaultClass \Lcobucci\Chimera\Routing\RouteParamsExtraction
+ * @coversDefaultClass \Chimera\Routing\RouteParamsExtraction
  */
 final class RouteParamsExtractionTest extends TestCase
 {
