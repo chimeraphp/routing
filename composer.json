@@ -1,5 +1,5 @@
 {
-    "name": "lcobucci/chimera-routing",
+    "name": "chimera/routing",
     "description": "A collection of reusable PSR-15 components that connects Chimera to any framework",
     "type": "library",
     "license": "MIT",
@@ -43,7 +43,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "0.1.x-dev"
         }
     }
 }
