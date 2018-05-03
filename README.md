@@ -1,13 +1,13 @@
 # Chimera - routing
 
-[![Total Downloads](https://img.shields.io/packagist/dt/lcobucci/chimera-routing.svg?style=flat-square)](https://packagist.org/packages/lcobucci/chimera-routing)
-[![Latest Stable Version](https://img.shields.io/packagist/v/lcobucci/chimera-routing.svg?style=flat-square)](https://packagist.org/packages/lcobucci/chimera-routing)
-[![Unstable Version](https://img.shields.io/packagist/vpre/lcobucci/chimera-routing.svg?style=flat-square)](https://packagist.org/packages/lcobucci/chimera-routing)
+[![Total Downloads](https://img.shields.io/packagist/dt/chimera/routing.svg?style=flat-square)](https://packagist.org/packages/chimera/routing)
+[![Latest Stable Version](https://img.shields.io/packagist/v/chimera/routing.svg?style=flat-square)](https://packagist.org/packages/chimera/routing)
+[![Unstable Version](https://img.shields.io/packagist/vpre/chimera/routing.svg?style=flat-square)](https://packagist.org/packages/chimera/routing)
 
 ![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/lcobucci/chimera-routing/master.svg?style=flat-square)](http://travis-ci.org/#!/lcobucci/chimera-routing)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/lcobucci/chimera-routing/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/lcobucci/chimera-routing/?branch=master)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/lcobucci/chimera-routing/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/lcobucci/chimera-routing/?branch=master)
+[![Build Status](https://img.shields.io/travis/chimeraphp/routing/master.svg?style=flat-square)](http://travis-ci.org/#!/chimeraphp/routing)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/chimeraphp/routing/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/routing/?branch=master)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/chimeraphp/routing/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/routing/?branch=master)
 
 > The term Chimera (_/kɪˈmɪərə/_ or _/kaɪˈmɪərə/_) has come to describe any
 mythical or fictional animal with parts taken from various animals, or to
@@ -30,11 +30,11 @@ web mechanism.
 
 ## Installation
 
-You probably won't depend directly on this package, but it is available on [Packagist](http://packagist.org/packages/lcobucci/chimera-routing),
+You probably won't depend directly on this package, but it is available on [Packagist](http://packagist.org/packages/chimera/routing),
 and can be installed it using [Composer](http://getcomposer.org):
 
 ```shell
-composer require lcobucci/chimera-routing
+composer require chimera/routing
 ```
 
 ### PHP Configuration
@@ -58,35 +58,35 @@ Check the documentation for more information: https://secure.php.net/manual/en/f
 The packages that extend this library should implement two basic interfaces, they're
 used to abstract how each routing library works:
 
-* `Lcobucci\Chimera\Routing\RouteParamsExtractor`: returns the list of parameters
+* `Chimera\Routing\RouteParamsExtractor`: returns the list of parameters
 of the matched route
-* `Lcobucci\Chimera\Routing\UriGenerator`: generate routes based on the given
+* `Chimera\Routing\UriGenerator`: generate routes based on the given
 arguments
 
 ### Route parameters extraction middleware
 
-This middleware uses an implementation of `Lcobucci\Chimera\Routing\RouteParamsExtractor`
+This middleware uses an implementation of `Chimera\Routing\RouteParamsExtractor`
 to put the parameters of the matched route in a standard attribute, so that other components
 can retrieve them.
 
 ### Request handlers
 
-* `Lcobucci\Chimera\Handler\CreateAndFetch`: executes a command to create a
+* `Chimera\Handler\CreateAndFetch`: executes a command to create a
 resource and immediately a query, returning an unformatted response with the
 query result and location header - intended to be used to handle **POST**
 requests
-* `Lcobucci\Chimera\Handler\CreateOnly`: executes a command to create a resource,
+* `Chimera\Handler\CreateOnly`: executes a command to create a resource,
 returning an empty response with the location header - intended to be used to
 handle **POST** requests (variation of the previous one but can also be used
 in asynchronous APIs)
-* `Lcobucci\Chimera\Handler\ExecuteAndFetch`: executes a command to modify a
+* `Chimera\Handler\ExecuteAndFetch`: executes a command to modify a
 resource and immediately a query, returning an unformatted response with the
 query result - intended to be used to handle **PUT** or **PATCH** requests
-* `Lcobucci\Chimera\Handler\ExecuteOnly`: executes a command to modify or remove
+* `Chimera\Handler\ExecuteOnly`: executes a command to modify or remove
 a resource, returning an empty response - intended to be used to
 handle **PUT**, **PATCH**, or **DELETE** requests (can also be used in
 asynchronous APIs)
-* `Lcobucci\Chimera\Handler\FetchOnly`: executes a query to fetch a resource,
+* `Chimera\Handler\FetchOnly`: executes a query to fetch a resource,
 returning an unformatted response with the query result - intended to be used
 to handle **GET** requests
 
@@ -99,7 +99,7 @@ handlers. It's expected that you configure [`lcobucci/content-negotiation-middle
 to process such task and it should be put in the very beginning of the pipeline,
 so that it can process **any** unformatted response.
 
-The `Lcobucci\Chimera\Routing\RouteParamsExtractor` middleware should be put
+The `Chimera\Routing\RouteParamsExtractor` middleware should be put
 right after the middleware responsible for matching routes (which changes for
 each implementation).
 
@@ -111,7 +111,7 @@ the DI container:
 <?php
 declare(strict_types=1);
 
-use Lcobucci\Chimera\Routing\RouteParamsExtraction;
+use Chimera\Routing\RouteParamsExtraction;
 use Lcobucci\ContentNegotiation\ContentTypeMiddleware;
 use Psr\Container\ContainerInterface;
 use Zend\Expressive\Application;
@@ -215,4 +215,4 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
 
 ## License
 
-MIT, see [LICENSE file](https://github.com/lcobucci/chimera-routing/blob/master/LICENSE).
+MIT, see [LICENSE file](https://github.com/chimeraphp/routing/blob/master/LICENSE).
