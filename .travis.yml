@@ -1,9 +1,11 @@
-dist: trusty
+dist: xenial
 sudo: false
 language: php
 
 php:
   - 7.2
+  - 7.3
+  - 7.4snapshot
   - nightly
 
 cache:
@@ -21,9 +23,8 @@ script:
 
 jobs:
   allow_failures:
+    - php: 7.4snapshot
     - php: nightly
-    - env: STATIC_ANALYSIS=1
-    - env: MUTATION_TESTS=1
 
   include:
     - stage: Code Quality

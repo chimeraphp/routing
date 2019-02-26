@@ -26,7 +26,7 @@ final class RouteParamsExtraction implements MiddlewareInterface
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         return $handler->handle(
-            $request->withAttribute(__CLASS__, $this->extractor->getParams($request))
+            $request->withAttribute(self::class, $this->extractor->getParams($request))
         );
     }
 }
