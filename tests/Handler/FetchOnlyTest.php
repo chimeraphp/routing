@@ -9,10 +9,10 @@ use Chimera\Routing\Handler\FetchOnly;
 use Chimera\ServiceBus;
 use Fig\Http\Message\StatusCodeInterface;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
-use Middlewares\Utils\Factory;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
+use Zend\Diactoros\ResponseFactory;
 use Zend\Diactoros\ServerRequest;
 
 /**
@@ -51,7 +51,7 @@ final class FetchOnlyTest extends TestCase
     {
         $handler = new FetchOnly(
             new ExecuteQuery($this->bus, $this->creator, 'query'),
-            [Factory::class, 'createResponse']
+            new ResponseFactory()
         );
 
         $query = (object) ['a' => 'b'];

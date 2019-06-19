@@ -7,10 +7,10 @@ use Chimera\ExecuteCommand;
 use Chimera\ExecuteQuery;
 use Chimera\Routing\HttpRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use function assert;
 
 /**
  * Executes a command and then a query, returning its result in an unformatted
@@ -29,14 +29,14 @@ final class ExecuteAndFetch implements RequestHandlerInterface
     private $readAction;
 
     /**
-     * @var callable
+     * @var ResponseFactoryInterface
      */
     private $responseFactory;
 
     public function __construct(
         ExecuteCommand $writeAction,
         ExecuteQuery $readAction,
-        callable $responseFactory
+        ResponseFactoryInterface $responseFactory
     ) {
         $this->writeAction     = $writeAction;
         $this->readAction      = $readAction;
@@ -52,11 +52,8 @@ final class ExecuteAndFetch implements RequestHandlerInterface
 
         $this->writeAction->execute($input);
 
-        $response = ($this->responseFactory)();
-        assert($response instanceof ResponseInterface);
-
         return new UnformattedResponse(
-            $response,
+            $this->responseFactory->createResponse(),
             $this->readAction->fetch($input),
             [ExecuteQuery::class => $this->readAction->getQuery()]
         );
