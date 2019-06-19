@@ -52,7 +52,7 @@ final class HttpRequestTest extends TestCase
      * @covers ::getData()
      * @covers ::getContext()
      *
-     * @param mixed[] $data
+     * @param array<string, string|int> $data
      */
     public function getDataShouldReturnMergeDataInTheCorrectPrecedence(
         ServerRequestInterface $request,
@@ -64,7 +64,7 @@ final class HttpRequestTest extends TestCase
     }
 
     /**
-     * @return mixed[][]
+     * @return array<string, array<ServerRequest|array<string, string|int>>>
      */
     public function dataMergingPossibilities(): array
     {
