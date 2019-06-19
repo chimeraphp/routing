@@ -3,12 +3,9 @@ declare(strict_types=1);
 
 namespace Chimera\Routing;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 
-interface Application
+interface Application extends RequestHandlerInterface
 {
-    public function handle(ServerRequestInterface $request): ResponseInterface;
-
     public function run(): void;
 }
