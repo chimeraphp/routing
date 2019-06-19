@@ -10,10 +10,10 @@ use Chimera\Routing\HttpRequest;
 use Chimera\Routing\UriGenerator;
 use Fig\Http\Message\StatusCodeInterface;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use function assert;
 
 /**
  * Generates an identifier, executes a command, and then a query. Returns the
@@ -32,7 +32,7 @@ final class CreateAndFetch implements RequestHandlerInterface
     private $readAction;
 
     /**
-     * @var callable
+     * @var ResponseFactoryInterface
      */
     private $responseFactory;
 
@@ -54,7 +54,7 @@ final class CreateAndFetch implements RequestHandlerInterface
     public function __construct(
         ExecuteCommand $writeAction,
         ExecuteQuery $readAction,
-        callable $responseFactory,
+        ResponseFactoryInterface $responseFactory,
         string $routeName,
         UriGenerator $uriGenerator,
         IdentifierGenerator $identifierGenerator
@@ -90,12 +90,9 @@ final class CreateAndFetch implements RequestHandlerInterface
 
     private function generateResponse(ServerRequestInterface $request): ResponseInterface
     {
-        $response = ($this->responseFactory)();
-        assert($response instanceof ResponseInterface);
-
+        $response    = $this->responseFactory->createResponse(StatusCodeInterface::STATUS_CREATED);
         $resourceUri = $this->uriGenerator->generateRelativePath($request, $this->routeName);
 
-        return $response->withStatus(StatusCodeInterface::STATUS_CREATED)
-                        ->withAddedHeader('Location', $resourceUri);
+        return $response->withAddedHeader('Location', $resourceUri);
     }
 }

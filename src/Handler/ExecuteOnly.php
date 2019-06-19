@@ -5,10 +5,10 @@ namespace Chimera\Routing\Handler;
 
 use Chimera\ExecuteCommand;
 use Chimera\Routing\HttpRequest;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use function assert;
 
 /**
  * Executes or schedule a command, returning a response with empty body.
@@ -21,7 +21,7 @@ final class ExecuteOnly implements RequestHandlerInterface
     private $action;
 
     /**
-     * @var callable
+     * @var ResponseFactoryInterface
      */
     private $responseFactory;
 
@@ -30,7 +30,7 @@ final class ExecuteOnly implements RequestHandlerInterface
      */
     private $statusCode;
 
-    public function __construct(ExecuteCommand $action, callable $responseFactory, int $statusCode)
+    public function __construct(ExecuteCommand $action, ResponseFactoryInterface $responseFactory, int $statusCode)
     {
         $this->action          = $action;
         $this->responseFactory = $responseFactory;
@@ -44,9 +44,6 @@ final class ExecuteOnly implements RequestHandlerInterface
     {
         $this->action->execute(new HttpRequest($request));
 
-        $response = ($this->responseFactory)();
-        assert($response instanceof ResponseInterface);
-
-        return $response->withStatus($this->statusCode);
+        return $this->responseFactory->createResponse($this->statusCode);
     }
 }

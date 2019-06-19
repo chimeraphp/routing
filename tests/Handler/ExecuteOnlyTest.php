@@ -9,9 +9,9 @@ use Chimera\Routing\Handler\ExecuteOnly;
 use Chimera\ServiceBus;
 use Fig\Http\Message\StatusCodeInterface;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
-use Middlewares\Utils\Factory;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Zend\Diactoros\ResponseFactory;
 use Zend\Diactoros\ServerRequest;
 
 /**
@@ -50,7 +50,7 @@ final class ExecuteOnlyTest extends TestCase
     {
         $handler = new ExecuteOnly(
             new ExecuteCommand($this->bus, $this->creator, 'command'),
-            [Factory::class, 'createResponse'],
+            new ResponseFactory(),
             StatusCodeInterface::STATUS_NO_CONTENT
         );
 

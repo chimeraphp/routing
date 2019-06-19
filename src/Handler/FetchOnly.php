@@ -6,10 +6,10 @@ namespace Chimera\Routing\Handler;
 use Chimera\ExecuteQuery;
 use Chimera\Routing\HttpRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use function assert;
 
 /**
  * Executes a query, returning an unformatted response with its result.
@@ -22,11 +22,11 @@ final class FetchOnly implements RequestHandlerInterface
     private $action;
 
     /**
-     * @var callable
+     * @var ResponseFactoryInterface
      */
     private $responseFactory;
 
-    public function __construct(ExecuteQuery $action, callable $responseFactory)
+    public function __construct(ExecuteQuery $action, ResponseFactoryInterface $responseFactory)
     {
         $this->action          = $action;
         $this->responseFactory = $responseFactory;
@@ -37,11 +37,8 @@ final class FetchOnly implements RequestHandlerInterface
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $response = ($this->responseFactory)();
-        assert($response instanceof ResponseInterface);
-
         return new UnformattedResponse(
-            $response,
+            $this->responseFactory->createResponse(),
             $this->action->fetch(new HttpRequest($request)),
             [ExecuteQuery::class => $this->action->getQuery()]
         );

@@ -10,10 +10,10 @@ use Chimera\Routing\Handler\ExecuteAndFetch;
 use Chimera\ServiceBus;
 use Fig\Http\Message\StatusCodeInterface;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
-use Middlewares\Utils\Factory;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
+use Zend\Diactoros\ResponseFactory;
 use Zend\Diactoros\ServerRequest;
 
 /**
@@ -53,7 +53,7 @@ final class ExecuteAndFetchTest extends TestCase
         $handler = new ExecuteAndFetch(
             new ExecuteCommand($this->bus, $this->creator, 'command'),
             new ExecuteQuery($this->bus, $this->creator, 'query'),
-            [Factory::class, 'createResponse']
+            new ResponseFactory()
         );
 
         $command = (object) ['a' => 'b'];

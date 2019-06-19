@@ -7,10 +7,10 @@ use Chimera\ExecuteCommand;
 use Chimera\IdentifierGenerator;
 use Chimera\Routing\HttpRequest;
 use Chimera\Routing\UriGenerator;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use function assert;
 
 /**
  * Generates an identifier and executes (or schedule) a command, returning
@@ -24,7 +24,7 @@ final class CreateOnly implements RequestHandlerInterface
     private $action;
 
     /**
-     * @var callable
+     * @var ResponseFactoryInterface
      */
     private $responseFactory;
 
@@ -49,7 +49,7 @@ final class CreateOnly implements RequestHandlerInterface
 
     public function __construct(
         ExecuteCommand $action,
-        callable $responseFactory,
+        ResponseFactoryInterface $responseFactory,
         string $routeName,
         UriGenerator $uriGenerator,
         IdentifierGenerator $identifierGenerator,
@@ -80,12 +80,9 @@ final class CreateOnly implements RequestHandlerInterface
 
     private function generateResponse(ServerRequestInterface $request): ResponseInterface
     {
-        $response = ($this->responseFactory)();
-        assert($response instanceof ResponseInterface);
-
+        $response    = $this->responseFactory->createResponse($this->statusCode);
         $resourceUri = $this->uriGenerator->generateRelativePath($request, $this->routeName);
 
-        return $response->withStatus($this->statusCode)
-                        ->withAddedHeader('Location', $resourceUri);
+        return $response->withAddedHeader('Location', $resourceUri);
     }
 }
