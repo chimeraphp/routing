@@ -17,7 +17,7 @@
         "php": "^7.3 || ^8.0",
         "chimera/foundation": "^0.3",
         "fig/http-message-util": "^1.1",
-        "lcobucci/content-negotiation-middleware": "^2.0",
+        "lcobucci/content-negotiation-middleware": "^2.1",
         "middlewares/negotiation": "^1.1",
         "psr/http-factory": "^1.0",
         "psr/http-server-middleware": "^1.0"
