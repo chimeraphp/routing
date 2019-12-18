@@ -13,6 +13,8 @@ use Fig\Http\Message\StatusCodeInterface;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\ResponseFactory;
 use Zend\Diactoros\ServerRequest;
 
@@ -63,15 +65,6 @@ final class CreateOnlyTest extends TestCase
      */
     public function handleShouldExecuteTheCommandAndReturnAnEmptyResponse(): void
     {
-        $handler = new CreateOnly(
-            new ExecuteCommand($this->bus, $this->creator, 'command'),
-            new ResponseFactory(),
-            'info',
-            $this->uriGenerator,
-            $this->idGenerator,
-            StatusCodeInterface::STATUS_CREATED
-        );
-
         $request = new ServerRequest();
         $command = (object) ['a' => 'b'];
 
@@ -91,10 +84,61 @@ final class CreateOnlyTest extends TestCase
                            ->with($request->withAttribute(IdentifierGenerator::class, 1), 'info')
                            ->willReturn('/testing/1');
 
-        $response = $handler->handle($request);
+        $response = $this->handleRequest($request);
 
         self::assertNotInstanceOf(UnformattedResponse::class, $response);
         self::assertSame(StatusCodeInterface::STATUS_CREATED, $response->getStatusCode());
         self::assertSame('/testing/1', $response->getHeaderLine('Location'));
+    }
+
+    /**
+     * @test
+     *
+     * @covers ::__construct()
+     * @covers ::handle()
+     * @covers ::generateResponse()
+     *
+     * @uses \Chimera\Routing\HttpRequest
+     */
+    public function handleShouldPreserveTheRequestGeneratedIdIfAlreadyPresent(): void
+    {
+        $request = (new ServerRequest())->withAttribute(IdentifierGenerator::class, 2);
+        $command = (object) ['a' => 'b'];
+
+        $this->creator->expects(self::once())
+                      ->method('create')
+                      ->willReturn($command);
+
+        $this->bus->expects(self::once())
+                  ->method('handle')
+                  ->with($command);
+
+        $this->idGenerator->method('generate')
+                          ->willReturn(1);
+
+        $this->uriGenerator->expects(self::once())
+                           ->method('generateRelativePath')
+                           ->with($request, 'info')
+                           ->willReturn('/testing/2');
+
+        $response = $this->handleRequest($request);
+
+        self::assertNotInstanceOf(UnformattedResponse::class, $response);
+        self::assertSame(StatusCodeInterface::STATUS_CREATED, $response->getStatusCode());
+        self::assertSame('/testing/2', $response->getHeaderLine('Location'));
+    }
+
+    private function handleRequest(ServerRequestInterface $request): ResponseInterface
+    {
+        $handler = new CreateOnly(
+            new ExecuteCommand($this->bus, $this->creator, 'command'),
+            new ResponseFactory(),
+            'info',
+            $this->uriGenerator,
+            $this->idGenerator,
+            StatusCodeInterface::STATUS_CREATED
+        );
+
+        return $handler->handle($request);
     }
 }
