@@ -70,7 +70,7 @@ final class CreateOnly implements RequestHandlerInterface
     {
         $request = $request->withAttribute(
             IdentifierGenerator::class,
-            $this->identifierGenerator->generate()
+            $request->getAttribute(IdentifierGenerator::class, $this->identifierGenerator->generate())
         );
 
         $this->action->execute(new HttpRequest($request));
