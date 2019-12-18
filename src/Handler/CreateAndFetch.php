@@ -74,7 +74,7 @@ final class CreateAndFetch implements RequestHandlerInterface
     {
         $request = $request->withAttribute(
             IdentifierGenerator::class,
-            $this->identifierGenerator->generate()
+            $request->getAttribute(IdentifierGenerator::class, $this->identifierGenerator->generate())
         );
 
         $input = new HttpRequest($request);
