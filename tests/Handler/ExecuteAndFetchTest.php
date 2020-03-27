@@ -9,11 +9,11 @@ use Chimera\MessageCreator;
 use Chimera\Routing\Handler\ExecuteAndFetch;
 use Chimera\ServiceBus;
 use Fig\Http\Message\StatusCodeInterface;
+use Laminas\Diactoros\ResponseFactory;
+use Laminas\Diactoros\ServerRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Zend\Diactoros\ResponseFactory;
-use Zend\Diactoros\ServerRequest;
 
 /**
  * @coversDefaultClass \Chimera\Routing\Handler\ExecuteAndFetch

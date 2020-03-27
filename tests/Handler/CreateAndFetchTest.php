@@ -11,6 +11,8 @@ use Chimera\Routing\Handler\CreateAndFetch;
 use Chimera\Routing\UriGenerator;
 use Chimera\ServiceBus;
 use Fig\Http\Message\StatusCodeInterface;
+use Laminas\Diactoros\ResponseFactory;
+use Laminas\Diactoros\ServerRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -18,8 +20,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
-use Zend\Diactoros\ResponseFactory;
-use Zend\Diactoros\ServerRequest;
 
 /**
  * @coversDefaultClass \Chimera\Routing\Handler\CreateAndFetch

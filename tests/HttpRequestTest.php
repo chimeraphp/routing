@@ -5,9 +5,9 @@ namespace Chimera\Routing\Tests;
 
 use Chimera\Routing\HttpRequest;
 use Chimera\Routing\RouteParamsExtraction;
+use Laminas\Diactoros\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\ServerRequest;
 
 /**
  * @coversDefaultClass \Chimera\Routing\HttpRequest

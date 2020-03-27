@@ -5,9 +5,9 @@ namespace Chimera\Routing\Tests;
 
 use Chimera\Routing\MissingRouteDispatching;
 use Chimera\Routing\NoRouteMatched;
+use Laminas\Diactoros\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\ServerRequest;
 
 /**
  * @coversDefaultClass \Chimera\Routing\MissingRouteDispatching
