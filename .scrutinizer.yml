@@ -23,7 +23,7 @@ build:
 
     dependencies:
         override:
-            - composer install --no-interaction --prefer-dist
+            - COMPOSER_ROOT_VERSION=0.4.x-dev composer install --no-interaction --prefer-dist
 
 checks:
     php: true
