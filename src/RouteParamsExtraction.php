@@ -10,19 +10,13 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class RouteParamsExtraction implements MiddlewareInterface
 {
-    /**
-     * @var RouteParamsExtractor
-     */
-    private $extractor;
+    private RouteParamsExtractor $extractor;
 
     public function __construct(RouteParamsExtractor $extractor)
     {
         $this->extractor = $extractor;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         return $handler->handle(

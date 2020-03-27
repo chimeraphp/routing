@@ -18,20 +18,9 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class ExecuteAndFetch implements RequestHandlerInterface
 {
-    /**
-     * @var ExecuteCommand
-     */
-    private $writeAction;
-
-    /**
-     * @var ExecuteQuery
-     */
-    private $readAction;
-
-    /**
-     * @var ResponseFactoryInterface
-     */
-    private $responseFactory;
+    private ExecuteCommand $writeAction;
+    private ExecuteQuery $readAction;
+    private ResponseFactoryInterface $responseFactory;
 
     public function __construct(
         ExecuteCommand $writeAction,
@@ -43,9 +32,6 @@ final class ExecuteAndFetch implements RequestHandlerInterface
         $this->responseFactory = $responseFactory;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $input = new HttpRequest($request);

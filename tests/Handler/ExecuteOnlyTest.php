@@ -20,14 +20,14 @@ use Zend\Diactoros\ServerRequest;
 final class ExecuteOnlyTest extends TestCase
 {
     /**
-     * @var ServiceBus|MockObject
+     * @var ServiceBus&MockObject
      */
-    private $bus;
+    private ServiceBus $bus;
 
     /**
-     * @var MessageCreator|MockObject
+     * @var MessageCreator&MockObject
      */
-    private $creator;
+    private MessageCreator $creator;
 
     /**
      * @before

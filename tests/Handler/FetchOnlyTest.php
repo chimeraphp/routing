@@ -11,7 +11,6 @@ use Fig\Http\Message\StatusCodeInterface;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
 use Zend\Diactoros\ResponseFactory;
 use Zend\Diactoros\ServerRequest;
 
@@ -21,14 +20,14 @@ use Zend\Diactoros\ServerRequest;
 final class FetchOnlyTest extends TestCase
 {
     /**
-     * @var ServiceBus|MockObject
+     * @var ServiceBus&MockObject
      */
-    private $bus;
+    private ServiceBus $bus;
 
     /**
-     * @var MessageCreator|MockObject
+     * @var MessageCreator&MockObject
      */
-    private $creator;
+    private MessageCreator $creator;
 
     /**
      * @before
@@ -65,7 +64,6 @@ final class FetchOnlyTest extends TestCase
                   ->with($query)
                   ->willReturn('result');
 
-        /** @var ResponseInterface|UnformattedResponse $response */
         $response = $handler->handle(new ServerRequest());
 
         self::assertInstanceOf(UnformattedResponse::class, $response);

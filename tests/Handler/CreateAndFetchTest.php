@@ -27,24 +27,24 @@ use Zend\Diactoros\ServerRequest;
 final class CreateAndFetchTest extends TestCase
 {
     /**
-     * @var ServiceBus|MockObject
+     * @var ServiceBus&MockObject
      */
-    private $bus;
+    private ServiceBus $bus;
 
     /**
-     * @var MessageCreator|MockObject
+     * @var MessageCreator&MockObject
      */
-    private $creator;
+    private MessageCreator $creator;
 
     /**
-     * @var UriGenerator|MockObject
+     * @var UriGenerator&MockObject
      */
-    private $uriGenerator;
+    private UriGenerator $uriGenerator;
 
     /**
-     * @var IdentifierGenerator|MockObject
+     * @var IdentifierGenerator&MockObject
      */
-    private $idGenerator;
+    private IdentifierGenerator $idGenerator;
 
     private UuidInterface $id;
 
@@ -92,7 +92,6 @@ final class CreateAndFetchTest extends TestCase
                            ->with($request->withAttribute(IdentifierGenerator::class, $this->id), 'info')
                            ->willReturn('/testing/' . $this->id);
 
-        /** @var ResponseInterface|UnformattedResponse $response */
         $response = $this->handleRequest($request);
 
         self::assertInstanceOf(UnformattedResponse::class, $response);
@@ -134,7 +133,6 @@ final class CreateAndFetchTest extends TestCase
                            ->with($request, 'info')
                            ->willReturn('/testing/' . $this->id);
 
-        /** @var ResponseInterface|UnformattedResponse $response */
         $response = $this->handleRequest($request);
 
         self::assertInstanceOf(UnformattedResponse::class, $response);

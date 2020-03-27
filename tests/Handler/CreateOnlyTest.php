@@ -26,24 +26,24 @@ use Zend\Diactoros\ServerRequest;
 final class CreateOnlyTest extends TestCase
 {
     /**
-     * @var ServiceBus|MockObject
+     * @var ServiceBus&MockObject
      */
-    private $bus;
+    private ServiceBus $bus;
 
     /**
-     * @var MessageCreator|MockObject
+     * @var MessageCreator&MockObject
      */
-    private $creator;
+    private MessageCreator $creator;
 
     /**
-     * @var UriGenerator|MockObject
+     * @var UriGenerator&MockObject
      */
-    private $uriGenerator;
+    private UriGenerator $uriGenerator;
 
     /**
-     * @var IdentifierGenerator|MockObject
+     * @var IdentifierGenerator&MockObject
      */
-    private $idGenerator;
+    private IdentifierGenerator $idGenerator;
 
     private UuidInterface $id;
 

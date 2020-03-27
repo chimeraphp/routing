@@ -21,35 +21,12 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class CreateAndFetch implements RequestHandlerInterface
 {
-    /**
-     * @var ExecuteCommand
-     */
-    private $writeAction;
-
-    /**
-     * @var ExecuteQuery
-     */
-    private $readAction;
-
-    /**
-     * @var ResponseFactoryInterface
-     */
-    private $responseFactory;
-
-    /**
-     * @var string
-     */
-    private $routeName;
-
-    /**
-     * @var UriGenerator
-     */
-    private $uriGenerator;
-
-    /**
-     * @var IdentifierGenerator
-     */
-    private $identifierGenerator;
+    private ExecuteCommand $writeAction;
+    private ExecuteQuery $readAction;
+    private ResponseFactoryInterface $responseFactory;
+    private string $routeName;
+    private UriGenerator $uriGenerator;
+    private IdentifierGenerator $identifierGenerator;
 
     public function __construct(
         ExecuteCommand $writeAction,
@@ -67,9 +44,6 @@ final class CreateAndFetch implements RequestHandlerInterface
         $this->identifierGenerator = $identifierGenerator;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $request = $request->withAttribute(
