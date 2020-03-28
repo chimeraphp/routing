@@ -8,7 +8,7 @@ build:
                 rabbitmq: false
                 mongodb: false
                 php:
-                    version: 7.3
+                    version: 7.4
             cache:
                 disabled: false
                 directories:
@@ -23,7 +23,7 @@ build:
 
     dependencies:
         override:
-            - composer install --no-interaction --prefer-dist
+            - COMPOSER_ROOT_VERSION=0.4.x-dev composer install --no-interaction --prefer-dist
 
 checks:
     php: true

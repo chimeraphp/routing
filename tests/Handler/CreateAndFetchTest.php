@@ -11,13 +11,15 @@ use Chimera\Routing\Handler\CreateAndFetch;
 use Chimera\Routing\UriGenerator;
 use Chimera\ServiceBus;
 use Fig\Http\Message\StatusCodeInterface;
+use Laminas\Diactoros\ResponseFactory;
+use Laminas\Diactoros\ServerRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\ResponseFactory;
-use Zend\Diactoros\ServerRequest;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidInterface;
 
 /**
  * @coversDefaultClass \Chimera\Routing\Handler\CreateAndFetch
@@ -25,24 +27,26 @@ use Zend\Diactoros\ServerRequest;
 final class CreateAndFetchTest extends TestCase
 {
     /**
-     * @var ServiceBus|MockObject
+     * @var ServiceBus&MockObject
      */
-    private $bus;
+    private ServiceBus $bus;
 
     /**
-     * @var MessageCreator|MockObject
+     * @var MessageCreator&MockObject
      */
-    private $creator;
+    private MessageCreator $creator;
 
     /**
-     * @var UriGenerator|MockObject
+     * @var UriGenerator&MockObject
      */
-    private $uriGenerator;
+    private UriGenerator $uriGenerator;
 
     /**
-     * @var IdentifierGenerator|MockObject
+     * @var IdentifierGenerator&MockObject
      */
-    private $idGenerator;
+    private IdentifierGenerator $idGenerator;
+
+    private UuidInterface $id;
 
     /**
      * @before
@@ -53,6 +57,7 @@ final class CreateAndFetchTest extends TestCase
         $this->creator      = $this->createMock(MessageCreator::class);
         $this->uriGenerator = $this->createMock(UriGenerator::class);
         $this->idGenerator  = $this->createMock(IdentifierGenerator::class);
+        $this->id           = Uuid::uuid4();
     }
 
     /**
@@ -80,19 +85,18 @@ final class CreateAndFetchTest extends TestCase
                   ->willReturn(null, 'result');
 
         $this->idGenerator->method('generate')
-                          ->willReturn(1);
+                          ->willReturn($this->id);
 
         $this->uriGenerator->expects(self::once())
                            ->method('generateRelativePath')
-                           ->with($request->withAttribute(IdentifierGenerator::class, 1), 'info')
-                           ->willReturn('/testing/1');
+                           ->with($request->withAttribute(IdentifierGenerator::class, $this->id), 'info')
+                           ->willReturn('/testing/' . $this->id);
 
-        /** @var ResponseInterface|UnformattedResponse $response */
         $response = $this->handleRequest($request);
 
         self::assertInstanceOf(UnformattedResponse::class, $response);
         self::assertSame(StatusCodeInterface::STATUS_CREATED, $response->getStatusCode());
-        self::assertSame('/testing/1', $response->getHeaderLine('Location'));
+        self::assertSame('/testing/' . $this->id, $response->getHeaderLine('Location'));
         self::assertSame([ExecuteQuery::class => 'query'], $response->getAttributes());
         self::assertSame('result', $response->getUnformattedContent());
     }
@@ -108,7 +112,7 @@ final class CreateAndFetchTest extends TestCase
      */
     public function handleShouldPreserveTheRequestGeneratedIdIfAlreadyPresent(): void
     {
-        $request = (new ServerRequest())->withAttribute(IdentifierGenerator::class, 2);
+        $request = (new ServerRequest())->withAttribute(IdentifierGenerator::class, $this->id);
         $command = (object) ['a' => 'b'];
         $query   = (object) ['c' => 'd'];
 
@@ -122,19 +126,18 @@ final class CreateAndFetchTest extends TestCase
                   ->willReturn(null, 'result');
 
         $this->idGenerator->method('generate')
-                          ->willReturn(1);
+                          ->willReturn(Uuid::uuid4());
 
         $this->uriGenerator->expects(self::once())
                            ->method('generateRelativePath')
                            ->with($request, 'info')
-                           ->willReturn('/testing/2');
+                           ->willReturn('/testing/' . $this->id);
 
-        /** @var ResponseInterface|UnformattedResponse $response */
         $response = $this->handleRequest($request);
 
         self::assertInstanceOf(UnformattedResponse::class, $response);
         self::assertSame(StatusCodeInterface::STATUS_CREATED, $response->getStatusCode());
-        self::assertSame('/testing/2', $response->getHeaderLine('Location'));
+        self::assertSame('/testing/' . $this->id, $response->getHeaderLine('Location'));
         self::assertSame([ExecuteQuery::class => 'query'], $response->getAttributes());
         self::assertSame('result', $response->getUnformattedContent());
     }

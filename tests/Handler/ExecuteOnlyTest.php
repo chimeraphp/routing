@@ -8,11 +8,11 @@ use Chimera\MessageCreator;
 use Chimera\Routing\Handler\ExecuteOnly;
 use Chimera\ServiceBus;
 use Fig\Http\Message\StatusCodeInterface;
+use Laminas\Diactoros\ResponseFactory;
+use Laminas\Diactoros\ServerRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Zend\Diactoros\ResponseFactory;
-use Zend\Diactoros\ServerRequest;
 
 /**
  * @coversDefaultClass \Chimera\Routing\Handler\ExecuteOnly
@@ -20,14 +20,14 @@ use Zend\Diactoros\ServerRequest;
 final class ExecuteOnlyTest extends TestCase
 {
     /**
-     * @var ServiceBus|MockObject
+     * @var ServiceBus&MockObject
      */
-    private $bus;
+    private ServiceBus $bus;
 
     /**
-     * @var MessageCreator|MockObject
+     * @var MessageCreator&MockObject
      */
-    private $creator;
+    private MessageCreator $creator;
 
     /**
      * @before

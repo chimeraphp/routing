@@ -1,10 +1,7 @@
-dist: xenial
-sudo: false
 language: php
 
 php:
-  - 7.3
-  - 7.4snapshot
+  - 7.4
   - nightly
 
 cache:
@@ -14,6 +11,9 @@ cache:
 before_install:
   - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
   - composer self-update
+
+env:
+  - COMPOSER_ROOT_VERSION="0.4.x-dev"
 
 install: travis_retry composer install
 
@@ -26,7 +26,9 @@ jobs:
 
   include:
     - stage: Code Quality
-      env: TEST_COVERAGE=1
+      env:
+        - TEST_COVERAGE=1
+        - COMPOSER_ROOT_VERSION="0.4.x-dev"
       before_script:
         - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
         - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
@@ -37,17 +39,23 @@ jobs:
         - php ocular.phar code-coverage:upload --format=php-clover ./clover.xml
 
     - stage: Code Quality
-      env: CODE_STANDARD=1
+      env:
+        - CODE_STANDARD=1
+        - COMPOSER_ROOT_VERSION="0.4.x-dev"
       script:
         - ./vendor/bin/phpcs
 
     - stage: Code Quality
-      env: STATIC_ANALYSIS=1
+      env:
+        - STATIC_ANALYSIS=1
+        - COMPOSER_ROOT_VERSION="0.4.x-dev"
       script:
         - ./vendor/bin/phpstan analyse
 
     - stage: Code Quality
-      env: MUTATION_TESTS=1
+      env:
+        - MUTATION_TESTS=1
+        - COMPOSER_ROOT_VERSION="0.4.x-dev"
       before_script:
         - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
         - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for mutation tests"; exit 1; fi

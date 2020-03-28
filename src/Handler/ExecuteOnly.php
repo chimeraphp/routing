@@ -15,20 +15,9 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class ExecuteOnly implements RequestHandlerInterface
 {
-    /**
-     * @var ExecuteCommand
-     */
-    private $action;
-
-    /**
-     * @var ResponseFactoryInterface
-     */
-    private $responseFactory;
-
-    /**
-     * @var int
-     */
-    private $statusCode;
+    private ExecuteCommand $action;
+    private ResponseFactoryInterface $responseFactory;
+    private int $statusCode;
 
     public function __construct(ExecuteCommand $action, ResponseFactoryInterface $responseFactory, int $statusCode)
     {
@@ -37,9 +26,6 @@ final class ExecuteOnly implements RequestHandlerInterface
         $this->statusCode      = $statusCode;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $this->action->execute(new HttpRequest($request));

@@ -18,34 +18,12 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class CreateOnly implements RequestHandlerInterface
 {
-    /**
-     * @var ExecuteCommand
-     */
-    private $action;
-
-    /**
-     * @var ResponseFactoryInterface
-     */
-    private $responseFactory;
-
-    /**
-     * @var string
-     */
-    private $routeName;
-
-    /**
-     * @var UriGenerator
-     */
-    private $uriGenerator;
-
-    /**
-     * @var int
-     */
-    private $statusCode;
-    /**
-     * @var IdentifierGenerator
-     */
-    private $identifierGenerator;
+    private ExecuteCommand $action;
+    private ResponseFactoryInterface $responseFactory;
+    private string $routeName;
+    private UriGenerator $uriGenerator;
+    private int $statusCode;
+    private IdentifierGenerator $identifierGenerator;
 
     public function __construct(
         ExecuteCommand $action,
@@ -63,9 +41,6 @@ final class CreateOnly implements RequestHandlerInterface
         $this->statusCode          = $statusCode;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $request = $request->withAttribute(

@@ -13,10 +13,7 @@ use function is_array;
  */
 final class HttpRequest implements Input
 {
-    /**
-     * @var ServerRequestInterface
-     */
-    private $request;
+    private ServerRequestInterface $request;
 
     public function __construct(ServerRequestInterface $request)
     {
@@ -42,7 +39,7 @@ final class HttpRequest implements Input
     }
 
     /**
-     * @return string[]
+     * @return array<string, mixed>
      */
     private function getContext(): array
     {

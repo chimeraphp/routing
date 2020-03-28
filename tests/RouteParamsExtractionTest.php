@@ -5,10 +5,10 @@ namespace Chimera\Routing\Tests;
 
 use Chimera\Routing\RouteParamsExtraction;
 use Chimera\Routing\RouteParamsExtractor;
+use Laminas\Diactoros\Response;
+use Laminas\Diactoros\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response;
-use Zend\Diactoros\ServerRequest;
 
 /**
  * @coversDefaultClass \Chimera\Routing\RouteParamsExtraction
