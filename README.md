@@ -5,7 +5,7 @@
 [![Unstable Version](https://img.shields.io/packagist/vpre/chimera/routing.svg?style=flat-square)](https://packagist.org/packages/chimera/routing)
 
 ![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/chimeraphp/routing/master.svg?style=flat-square)](http://travis-ci.org/#!/chimeraphp/routing)
+[![Build Status](https://img.shields.io/travis/com/chimeraphp/routing/master.svg?style=flat-square)](http://travis-ci.com/chimeraphp/routing)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/chimeraphp/routing/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/routing/?branch=master)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/chimeraphp/routing/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/routing/?branch=master)
 
