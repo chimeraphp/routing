@@ -19,14 +19,10 @@ use PHPUnit\Framework\TestCase;
  */
 final class FetchOnlyTest extends TestCase
 {
-    /**
-     * @var ServiceBus&MockObject
-     */
+    /** @var ServiceBus&MockObject */
     private ServiceBus $bus;
 
-    /**
-     * @var MessageCreator&MockObject
-     */
+    /** @var MessageCreator&MockObject */
     private MessageCreator $creator;
 
     /**

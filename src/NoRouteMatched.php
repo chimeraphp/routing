@@ -7,6 +7,7 @@ use Chimera\Exception;
 use Fig\Http\Message\StatusCodeInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use RuntimeException;
+
 use function sprintf;
 
 final class NoRouteMatched extends RuntimeException implements Exception
