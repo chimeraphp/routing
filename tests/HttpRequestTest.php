@@ -9,9 +9,7 @@ use Laminas\Diactoros\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 
-/**
- * @coversDefaultClass \Chimera\Routing\HttpRequest
- */
+/** @coversDefaultClass \Chimera\Routing\HttpRequest */
 final class HttpRequestTest extends TestCase
 {
     /**
@@ -63,9 +61,7 @@ final class HttpRequestTest extends TestCase
         self::assertSame($data, $input->getData());
     }
 
-    /**
-     * @return array<string, array<ServerRequest|array<string, string|int>>>
-     */
+    /** @return array<string, array<ServerRequest|array<string, string|int>>> */
     public function dataMergingPossibilities(): array
     {
         $base = new ServerRequest();

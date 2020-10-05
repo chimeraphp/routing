@@ -10,6 +10,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class MissingRouteDispatching implements MiddlewareInterface
 {
+    // phpcs:ignore SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         throw NoRouteMatched::fromRequest($request);
