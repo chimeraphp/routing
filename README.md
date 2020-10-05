@@ -1,13 +1,11 @@
 # Chimera - routing
 
-[![Total Downloads](https://img.shields.io/packagist/dt/chimera/routing.svg?style=flat-square)](https://packagist.org/packages/chimera/routing)
-[![Latest Stable Version](https://img.shields.io/packagist/v/chimera/routing.svg?style=flat-square)](https://packagist.org/packages/chimera/routing)
-[![Unstable Version](https://img.shields.io/packagist/vpre/chimera/routing.svg?style=flat-square)](https://packagist.org/packages/chimera/routing)
+[![Total Downloads]](https://packagist.org/packages/chimera/routing)
+[![Latest Stable Version]](https://packagist.org/packages/chimera/routing)
+[![Unstable Version]](https://packagist.org/packages/chimera/routing)
 
-![Branch master](https://img.shields.io/badge/branch-master-brightgreen.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/com/chimeraphp/routing/master.svg?style=flat-square)](http://travis-ci.com/chimeraphp/routing)
-[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/chimeraphp/routing/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/routing/?branch=master)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/chimeraphp/routing/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/chimeraphp/routing/?branch=master)
+[![Build Status]](https://github.com/chimeraphp/routing/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3Amaster)
+[![Code Coverage]](https://codecov.io/gh/chimeraphp/routing)
 
 > The term Chimera (_/kɪˈmɪərə/_ or _/kaɪˈmɪərə/_) has come to describe any
 mythical or fictional animal with parts taken from various animals, or to
@@ -30,8 +28,7 @@ web mechanism.
 
 ## Installation
 
-You probably won't depend directly on this package, but it is available on [Packagist](http://packagist.org/packages/chimera/routing),
-and can be installed it using [Composer](http://getcomposer.org):
+You probably won't depend directly on this package, but it is available on [Packagist], and can be installed it using [Composer]:
 
 ```shell
 composer require chimera/routing
@@ -215,4 +212,13 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
 
 ## License
 
-MIT, see [LICENSE file](https://github.com/chimeraphp/routing/blob/master/LICENSE).
+MIT, see [LICENSE].
+
+[Total Downloads]: https://img.shields.io/packagist/dt/chimera/routing.svg?style=flat-square
+[Latest Stable Version]: https://img.shields.io/packagist/v/chimera/routing.svg?style=flat-square
+[Unstable Version]: https://img.shields.io/packagist/vpre/chimera/routing.svg?style=flat-square
+[Build Status]: https://img.shields.io/github/workflow/status/chimeraphp/routing/PHPUnit%20tests/master?style=flat-square
+[Code Coverage]: https://codecov.io/gh/chimeraphp/routing/branch/master/graph/badge.svg
+[Packagist]: http://packagist.org/packages/chimera/routing
+[Composer]: http://getcomposer.org
+[LICENSE]: LICENSE

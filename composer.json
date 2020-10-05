@@ -23,15 +23,15 @@
         "psr/http-server-middleware": "^1.0"
     },
     "require-dev": {
-        "infection/infection": "^0.16",
-        "laminas/laminas-diactoros": "^2.3",
-        "lcobucci/coding-standard": "^5.0",
+        "infection/infection": "^0.17",
+        "laminas/laminas-diactoros": "^2.4",
+        "lcobucci/coding-standard": "^6.0",
         "phpstan/extension-installer": "^1.0",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-deprecation-rules": "^0.12",
         "phpstan/phpstan-phpunit": "^0.12",
         "phpstan/phpstan-strict-rules": "^0.12",
-        "phpunit/phpunit": "^9.2"
+        "phpunit/phpunit": "^9.4"
     },
     "autoload": {
         "psr-4": {

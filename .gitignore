@@ -2,6 +2,6 @@
 /phpunit.xml
 /phpcs.xml
 /.phpcs.cache
-/composer.lock
-/infection-log.txt
+/infection.log
 /.phpunit.result.cache
+/build

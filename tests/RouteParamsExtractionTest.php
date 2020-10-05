@@ -10,9 +10,7 @@ use Laminas\Diactoros\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Server\RequestHandlerInterface;
 
-/**
- * @coversDefaultClass \Chimera\Routing\RouteParamsExtraction
- */
+/** @coversDefaultClass \Chimera\Routing\RouteParamsExtraction */
 final class RouteParamsExtractionTest extends TestCase
 {
     /**

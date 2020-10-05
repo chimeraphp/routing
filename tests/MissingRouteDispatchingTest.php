@@ -9,9 +9,7 @@ use Laminas\Diactoros\ServerRequest;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Server\RequestHandlerInterface;
 
-/**
- * @coversDefaultClass \Chimera\Routing\MissingRouteDispatching
- */
+/** @coversDefaultClass \Chimera\Routing\MissingRouteDispatching */
 final class MissingRouteDispatchingTest extends TestCase
 {
     /**

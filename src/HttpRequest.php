@@ -39,9 +39,7 @@ final class HttpRequest implements Input
         return (array) $data + $this->getContext();
     }
 
-    /**
-     * @return array<string, mixed>
-     */
+    /** @return array<string, mixed> */
     private function getContext(): array
     {
         $routeParams = $this->request->getAttribute(RouteParamsExtraction::class, []);

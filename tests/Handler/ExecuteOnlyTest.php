@@ -14,9 +14,7 @@ use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @coversDefaultClass \Chimera\Routing\Handler\ExecuteOnly
- */
+/** @coversDefaultClass \Chimera\Routing\Handler\ExecuteOnly */
 final class ExecuteOnlyTest extends TestCase
 {
     /** @var ServiceBus&MockObject */
@@ -25,9 +23,7 @@ final class ExecuteOnlyTest extends TestCase
     /** @var MessageCreator&MockObject */
     private MessageCreator $creator;
 
-    /**
-     * @before
-     */
+    /** @before */
     public function createDependencies(): void
     {
         $this->bus     = $this->createMock(ServiceBus::class);

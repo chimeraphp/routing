@@ -20,9 +20,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
-/**
- * @coversDefaultClass \Chimera\Routing\Handler\CreateOnly
- */
+/** @coversDefaultClass \Chimera\Routing\Handler\CreateOnly */
 final class CreateOnlyTest extends TestCase
 {
     /** @var ServiceBus&MockObject */
@@ -39,9 +37,7 @@ final class CreateOnlyTest extends TestCase
 
     private UuidInterface $id;
 
-    /**
-     * @before
-     */
+    /** @before */
     public function createDependencies(): void
     {
         $this->bus          = $this->createMock(ServiceBus::class);
