@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "a148c46637cee7cd47756b7cee0218c6fdc950a7"
+                "reference": "e14c27ca150970da65401c57918a84ffa6f1453f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/a148c46637cee7cd47756b7cee0218c6fdc950a7",
-                "reference": "a148c46637cee7cd47756b7cee0218c6fdc950a7",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/e14c27ca150970da65401c57918a84ffa6f1453f",
+                "reference": "e14c27ca150970da65401c57918a84ffa6f1453f",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-10-18T10:03:48+00:00"
+            "time": "2020-10-19T11:28:46+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -4910,16 +4910,16 @@
         },
         {
             "name": "thecodingmachine/safe",
-            "version": "v1.3.1",
+            "version": "v1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thecodingmachine/safe.git",
-                "reference": "a6b795aeb367c90cc6ed88dadb4cdcac436377c2"
+                "reference": "72d9fee55e14e07a6283c9b3e28c09e85923a148"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/a6b795aeb367c90cc6ed88dadb4cdcac436377c2",
-                "reference": "a6b795aeb367c90cc6ed88dadb4cdcac436377c2",
+                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/72d9fee55e14e07a6283c9b3e28c09e85923a148",
+                "reference": "72d9fee55e14e07a6283c9b3e28c09e85923a148",
                 "shasum": ""
             },
             "require": {
@@ -5041,7 +5041,7 @@
                 "MIT"
             ],
             "description": "PHP core functions that throw exceptions instead of returning FALSE on error",
-            "time": "2020-10-08T08:40:29+00:00"
+            "time": "2020-10-22T09:17:04+00:00"
         },
         {
             "name": "theseer/tokenizer",
