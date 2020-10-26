@@ -19,6 +19,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
+use stdClass;
 
 /** @coversDefaultClass \Chimera\Routing\Handler\CreateOnly */
 final class CreateOnlyTest extends TestCase
@@ -124,7 +125,7 @@ final class CreateOnlyTest extends TestCase
     private function handleRequest(ServerRequestInterface $request): ResponseInterface
     {
         $handler = new CreateOnly(
-            new ExecuteCommand($this->bus, $this->creator, 'command'),
+            new ExecuteCommand($this->bus, $this->creator, stdClass::class),
             new ResponseFactory(),
             'info',
             $this->uriGenerator,

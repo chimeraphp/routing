@@ -13,6 +13,7 @@ use Laminas\Diactoros\ServerRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 
 /** @coversDefaultClass \Chimera\Routing\Handler\ExecuteOnly */
 final class ExecuteOnlyTest extends TestCase
@@ -41,7 +42,7 @@ final class ExecuteOnlyTest extends TestCase
     public function handleShouldExecuteTheCommandAndReturnAnEmptyResponse(): void
     {
         $handler = new ExecuteOnly(
-            new ExecuteCommand($this->bus, $this->creator, 'command'),
+            new ExecuteCommand($this->bus, $this->creator, stdClass::class),
             new ResponseFactory(),
             StatusCodeInterface::STATUS_NO_CONTENT
         );
