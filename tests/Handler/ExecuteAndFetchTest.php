@@ -14,6 +14,7 @@ use Laminas\Diactoros\ServerRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 
 /** @coversDefaultClass \Chimera\Routing\Handler\ExecuteAndFetch */
 final class ExecuteAndFetchTest extends TestCase
@@ -42,8 +43,8 @@ final class ExecuteAndFetchTest extends TestCase
     public function handleShouldExecuteTheCommandAndReturnAnEmptyResponse(): void
     {
         $handler = new ExecuteAndFetch(
-            new ExecuteCommand($this->bus, $this->creator, 'command'),
-            new ExecuteQuery($this->bus, $this->creator, 'query'),
+            new ExecuteCommand($this->bus, $this->creator, stdClass::class),
+            new ExecuteQuery($this->bus, $this->creator, stdClass::class),
             new ResponseFactory()
         );
 
@@ -63,7 +64,7 @@ final class ExecuteAndFetchTest extends TestCase
 
         self::assertInstanceOf(UnformattedResponse::class, $response);
         self::assertSame(StatusCodeInterface::STATUS_OK, $response->getStatusCode());
-        self::assertSame([ExecuteQuery::class => 'query'], $response->getAttributes());
+        self::assertSame([ExecuteQuery::class => stdClass::class], $response->getAttributes());
         self::assertSame('result', $response->getUnformattedContent());
     }
 }

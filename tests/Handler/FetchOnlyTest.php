@@ -13,6 +13,7 @@ use Laminas\Diactoros\ServerRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 
 /** @coversDefaultClass \Chimera\Routing\Handler\FetchOnly */
 final class FetchOnlyTest extends TestCase
@@ -41,7 +42,7 @@ final class FetchOnlyTest extends TestCase
     public function handleShouldExecuteTheQueryAndReturnItsContent(): void
     {
         $handler = new FetchOnly(
-            new ExecuteQuery($this->bus, $this->creator, 'query'),
+            new ExecuteQuery($this->bus, $this->creator, stdClass::class),
             new ResponseFactory()
         );
 
@@ -60,7 +61,7 @@ final class FetchOnlyTest extends TestCase
 
         self::assertInstanceOf(UnformattedResponse::class, $response);
         self::assertSame(StatusCodeInterface::STATUS_OK, $response->getStatusCode());
-        self::assertSame([ExecuteQuery::class => 'query'], $response->getAttributes());
+        self::assertSame([ExecuteQuery::class => stdClass::class], $response->getAttributes());
         self::assertSame('result', $response->getUnformattedContent());
     }
 }

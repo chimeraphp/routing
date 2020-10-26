@@ -20,6 +20,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
+use stdClass;
 
 /** @coversDefaultClass \Chimera\Routing\Handler\CreateAndFetch */
 final class CreateAndFetchTest extends TestCase
@@ -85,7 +86,7 @@ final class CreateAndFetchTest extends TestCase
         self::assertInstanceOf(UnformattedResponse::class, $response);
         self::assertSame(StatusCodeInterface::STATUS_CREATED, $response->getStatusCode());
         self::assertSame('/testing/' . $this->id, $response->getHeaderLine('Location'));
-        self::assertSame([ExecuteQuery::class => 'query'], $response->getAttributes());
+        self::assertSame([ExecuteQuery::class => stdClass::class], $response->getAttributes());
         self::assertSame('result', $response->getUnformattedContent());
     }
 
@@ -126,15 +127,15 @@ final class CreateAndFetchTest extends TestCase
         self::assertInstanceOf(UnformattedResponse::class, $response);
         self::assertSame(StatusCodeInterface::STATUS_CREATED, $response->getStatusCode());
         self::assertSame('/testing/' . $this->id, $response->getHeaderLine('Location'));
-        self::assertSame([ExecuteQuery::class => 'query'], $response->getAttributes());
+        self::assertSame([ExecuteQuery::class => stdClass::class], $response->getAttributes());
         self::assertSame('result', $response->getUnformattedContent());
     }
 
     private function handleRequest(ServerRequestInterface $request): ResponseInterface
     {
         $handler = new CreateAndFetch(
-            new ExecuteCommand($this->bus, $this->creator, 'command'),
-            new ExecuteQuery($this->bus, $this->creator, 'query'),
+            new ExecuteCommand($this->bus, $this->creator, stdClass::class),
+            new ExecuteQuery($this->bus, $this->creator, stdClass::class),
             new ResponseFactory(),
             'info',
             $this->uriGenerator,
