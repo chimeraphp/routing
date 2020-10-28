@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "989d42b9906ce9bec6030c4ee04c808da6f73c29"
+                "reference": "2cd3760be9b10272ffe330264d77993a06c1128e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/989d42b9906ce9bec6030c4ee04c808da6f73c29",
-                "reference": "989d42b9906ce9bec6030c4ee04c808da6f73c29",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/2cd3760be9b10272ffe330264d77993a06c1128e",
+                "reference": "2cd3760be9b10272ffe330264d77993a06c1128e",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-10-27T15:07:32+00:00"
+            "time": "2020-10-28T09:03:12+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -4224,27 +4224,22 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.1.7",
+            "version": "v5.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "2c3ba7ad6884e6c4451ce2340e2dc23f6fa3e0d8"
+                "reference": "e70eb5a69c2ff61ea135a13d2266e8914a67b3a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/2c3ba7ad6884e6c4451ce2340e2dc23f6fa3e0d8",
-                "reference": "2c3ba7ad6884e6c4451ce2340e2dc23f6fa3e0d8",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/e70eb5a69c2ff61ea135a13d2266e8914a67b3a0",
+                "reference": "e70eb5a69c2ff61ea135a13d2266e8914a67b3a0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Finder\\": ""
@@ -4283,7 +4278,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-02T16:23:27+00:00"
+            "time": "2020-10-24T12:01:57+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
