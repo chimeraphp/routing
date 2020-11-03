@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "7355d83b2399c0012126d3d9ea85ae9085b90ec5"
+                "reference": "62477636584ffbefc4bc621a1e06f737fc7f4ebd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/7355d83b2399c0012126d3d9ea85ae9085b90ec5",
-                "reference": "7355d83b2399c0012126d3d9ea85ae9085b90ec5",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/62477636584ffbefc4bc621a1e06f737fc7f4ebd",
+                "reference": "62477636584ffbefc4bc621a1e06f737fc7f4ebd",
                 "shasum": ""
             },
             "require": {
@@ -77,7 +77,7 @@
                 "ramsey/uuid": "^4.1"
             },
             "require-dev": {
-                "infection/infection": "^0.19",
+                "infection/infection": "^0.20",
                 "lcobucci/coding-standard": "^6.0",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^0.12",
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-11-01T14:59:50+00:00"
+            "time": "2020-11-02T23:15:44+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -1284,16 +1284,16 @@
         },
         {
             "name": "infection/infection",
-            "version": "0.20.0",
+            "version": "0.20.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/infection/infection.git",
-                "reference": "735506ce5fc35dd504c9ba147d5fe0554898b232"
+                "reference": "59a7a374e8020e362550b5223d7174ee7ccc184c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/infection/infection/zipball/735506ce5fc35dd504c9ba147d5fe0554898b232",
-                "reference": "735506ce5fc35dd504c9ba147d5fe0554898b232",
+                "url": "https://api.github.com/repos/infection/infection/zipball/59a7a374e8020e362550b5223d7174ee7ccc184c",
+                "reference": "59a7a374e8020e362550b5223d7174ee7ccc184c",
                 "shasum": ""
             },
             "require": {
@@ -1391,7 +1391,7 @@
                 "testing",
                 "unit testing"
             ],
-            "time": "2020-10-31T19:41:12+00:00"
+            "time": "2020-11-03T12:14:40+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
