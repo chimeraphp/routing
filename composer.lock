@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "f6337614b6265222de7ab842c3c1b0c05c385dcd"
+                "reference": "3a3423e2714255f712aabb2f05dd984d847eb100"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/f6337614b6265222de7ab842c3c1b0c05c385dcd",
-                "reference": "f6337614b6265222de7ab842c3c1b0c05c385dcd",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/3a3423e2714255f712aabb2f05dd984d847eb100",
+                "reference": "3a3423e2714255f712aabb2f05dd984d847eb100",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-11-30T06:53:32+00:00"
+            "time": "2020-11-30T10:51:45+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -304,38 +304,39 @@
         },
         {
             "name": "middlewares/utils",
-            "version": "v3.1.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/middlewares/utils.git",
-                "reference": "13689487e8f3bba10b6cc66ed206efc8b874163e"
+                "reference": "a9ef1e5365020ead0ae343b95602bd877a9bf852"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/middlewares/utils/zipball/13689487e8f3bba10b6cc66ed206efc8b874163e",
-                "reference": "13689487e8f3bba10b6cc66ed206efc8b874163e",
+                "url": "https://api.github.com/repos/middlewares/utils/zipball/a9ef1e5365020ead0ae343b95602bd877a9bf852",
+                "reference": "a9ef1e5365020ead0ae343b95602bd877a9bf852",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2",
+                "php": "^7.2 || ^8.0",
                 "psr/container": "^1.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.0",
                 "psr/http-server-middleware": "^1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.0",
+                "friendsofphp/php-cs-fixer": "^v2.16",
                 "guzzlehttp/psr7": "dev-master",
-                "laminas/laminas-diactoros": "^2.2",
+                "laminas/laminas-diactoros": "^2.4",
                 "nyholm/psr7": "^1.0",
                 "oscarotero/php-cs-fixer-config": "^1.0",
-                "phpunit/phpunit": "^8.1",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^8|^9",
                 "slim/psr7": "~0.3",
-                "squizlabs/php_codesniffer": "^3.0",
+                "squizlabs/php_codesniffer": "^3.5",
                 "sunrise/http-message": "^1.0",
                 "sunrise/http-server-request": "^1.0",
-                "sunrise/stream": "^1.0",
-                "sunrise/uri": "^1.0"
+                "sunrise/stream": "^1.0.15",
+                "sunrise/uri": "^1.0.15"
             },
             "type": "library",
             "autoload": {
@@ -357,7 +358,7 @@
                 "psr-17",
                 "psr-7"
             ],
-            "time": "2020-01-19T00:30:41+00:00"
+            "time": "2020-11-30T20:07:15+00:00"
         },
         {
             "name": "psr/container",
