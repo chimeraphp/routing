@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "3901f411956e9715116f235c4a27708d95422985"
+                "reference": "9257dc5b0a4b138fb3d36925da4221ebb34685ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/3901f411956e9715116f235c4a27708d95422985",
-                "reference": "3901f411956e9715116f235c4a27708d95422985",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/9257dc5b0a4b138fb3d36925da4221ebb34685ae",
+                "reference": "9257dc5b0a4b138fb3d36925da4221ebb34685ae",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "phpstan/phpstan-deprecation-rules": "^0.12",
                 "phpstan/phpstan-phpunit": "^0.12",
                 "phpstan/phpstan-strict-rules": "^0.12",
-                "phpunit/phpunit": "^9.4"
+                "phpunit/phpunit": "^9.5"
             },
             "type": "library",
             "extra": {
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-12-03T17:51:59+00:00"
+            "time": "2020-12-04T06:09:18+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -2280,16 +2280,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.58",
+            "version": "0.12.59",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "2a4847df6047b30af28854ed9dc95304cdb56ae5"
+                "reference": "cf4107257c8ca2ad967efdd6a00f12b21acbb779"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/2a4847df6047b30af28854ed9dc95304cdb56ae5",
-                "reference": "2a4847df6047b30af28854ed9dc95304cdb56ae5",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/cf4107257c8ca2ad967efdd6a00f12b21acbb779",
+                "reference": "cf4107257c8ca2ad967efdd6a00f12b21acbb779",
                 "shasum": ""
             },
             "require": {
@@ -2332,7 +2332,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-29T13:32:03+00:00"
+            "time": "2020-12-07T14:46:03+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
