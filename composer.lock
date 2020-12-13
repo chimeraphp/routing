@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "7baccf0d0343cd5d43a3822649f23faeb9707a8e"
+                "reference": "574f4b476efb8314b9afdc9a8ef9fcf42f36b66d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/7baccf0d0343cd5d43a3822649f23faeb9707a8e",
-                "reference": "7baccf0d0343cd5d43a3822649f23faeb9707a8e",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/574f4b476efb8314b9afdc9a8ef9fcf42f36b66d",
+                "reference": "574f4b476efb8314b9afdc9a8ef9fcf42f36b66d",
                 "shasum": ""
             },
             "require": {
@@ -79,7 +79,7 @@
             "require-dev": {
                 "infection/infection": "^0.20",
                 "lcobucci/coding-standard": "^6.0",
-                "phpstan/extension-installer": "^1.0",
+                "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan": "^0.12",
                 "phpstan/phpstan-deprecation-rules": "^0.12",
                 "phpstan/phpstan-phpunit": "^0.12",
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-12-13T12:18:47+00:00"
+            "time": "2020-12-13T13:13:15+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -2430,16 +2430,16 @@
         },
         {
             "name": "phpstan/phpstan-strict-rules",
-            "version": "0.12.6",
+            "version": "0.12.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-strict-rules.git",
-                "reference": "80a77d3c2965b10fd7158b6c94aef1fd8abafbb0"
+                "reference": "03807e3410747ec18cd5f05a6342384adcc423bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-strict-rules/zipball/80a77d3c2965b10fd7158b6c94aef1fd8abafbb0",
-                "reference": "80a77d3c2965b10fd7158b6c94aef1fd8abafbb0",
+                "url": "https://api.github.com/repos/phpstan/phpstan-strict-rules/zipball/03807e3410747ec18cd5f05a6342384adcc423bf",
+                "reference": "03807e3410747ec18cd5f05a6342384adcc423bf",
                 "shasum": ""
             },
             "require": {
@@ -2473,7 +2473,7 @@
                 "MIT"
             ],
             "description": "Extra strict and opinionated rules for PHPStan",
-            "time": "2020-12-12T16:28:23+00:00"
+            "time": "2020-12-13T13:27:14+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
