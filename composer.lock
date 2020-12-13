@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8d3d3111a6a1871dbf8accdf2a9f93b",
+    "content-hash": "9e887e863bd391fa3d404c6efce18c72",
     "packages": [
         {
             "name": "brick/math",
@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "21d7e0066ca7b33a652ad9104f879df57f5f5343"
+                "reference": "7baccf0d0343cd5d43a3822649f23faeb9707a8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/21d7e0066ca7b33a652ad9104f879df57f5f5343",
-                "reference": "21d7e0066ca7b33a652ad9104f879df57f5f5343",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/7baccf0d0343cd5d43a3822649f23faeb9707a8e",
+                "reference": "7baccf0d0343cd5d43a3822649f23faeb9707a8e",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-12-13T10:29:29+00:00"
+            "time": "2020-12-13T12:18:47+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -2186,16 +2186,16 @@
         },
         {
             "name": "phpstan/extension-installer",
-            "version": "1.0.6",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/extension-installer.git",
-                "reference": "5de413b3113304d81b4d895caa443fda2da25b54"
+                "reference": "66c7adc9dfa38b6b5838a9fb728b68a7d8348051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/extension-installer/zipball/5de413b3113304d81b4d895caa443fda2da25b54",
-                "reference": "5de413b3113304d81b4d895caa443fda2da25b54",
+                "url": "https://api.github.com/repos/phpstan/extension-installer/zipball/66c7adc9dfa38b6b5838a9fb728b68a7d8348051",
+                "reference": "66c7adc9dfa38b6b5838a9fb728b68a7d8348051",
                 "shasum": ""
             },
             "require": {
@@ -2223,7 +2223,7 @@
                 "MIT"
             ],
             "description": "Composer plugin for automatic installation of PHPStan extensions",
-            "time": "2020-12-12T15:17:16+00:00"
+            "time": "2020-12-13T13:06:13+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
