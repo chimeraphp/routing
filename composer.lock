@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "1f7711cc87db27e7684a11bb36a563f0ecc1ad21"
+                "reference": "3100a7d79ab1a98555dd24638a8274da392b92b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/1f7711cc87db27e7684a11bb36a563f0ecc1ad21",
-                "reference": "1f7711cc87db27e7684a11bb36a563f0ecc1ad21",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/3100a7d79ab1a98555dd24638a8274da392b92b9",
+                "reference": "3100a7d79ab1a98555dd24638a8274da392b92b9",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-12-15T16:55:56+00:00"
+            "time": "2020-12-19T10:26:09+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -1693,16 +1693,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.10.3",
+            "version": "v4.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "dbe56d23de8fcb157bbc0cfb3ad7c7de0cfb0984"
+                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dbe56d23de8fcb157bbc0cfb3ad7c7de0cfb0984",
-                "reference": "dbe56d23de8fcb157bbc0cfb3ad7c7de0cfb0984",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c6d052fc58cb876152f89f532b95a8d7907e7f0e",
+                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e",
                 "shasum": ""
             },
             "require": {
@@ -1741,7 +1741,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2020-12-03T17:45:45+00:00"
+            "time": "2020-12-20T10:01:03+00:00"
         },
         {
             "name": "ocramius/package-versions",
