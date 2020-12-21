@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "3100a7d79ab1a98555dd24638a8274da392b92b9"
+                "reference": "65287fb9adce05aa609f63468e5434bf47051cc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/3100a7d79ab1a98555dd24638a8274da392b92b9",
-                "reference": "3100a7d79ab1a98555dd24638a8274da392b92b9",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/65287fb9adce05aa609f63468e5434bf47051cc9",
+                "reference": "65287fb9adce05aa609f63468e5434bf47051cc9",
                 "shasum": ""
             },
             "require": {
@@ -118,7 +118,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-12-19T10:26:09+00:00"
+            "time": "2020-12-20T10:09:28+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -4652,16 +4652,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "240e74140d4d956265048f3025c0aecbbc302d54"
+                "reference": "bd8815b8b6705298beaa384f04fabd459c10bedd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/240e74140d4d956265048f3025c0aecbbc302d54",
-                "reference": "240e74140d4d956265048f3025c0aecbbc302d54",
+                "url": "https://api.github.com/repos/symfony/process/zipball/bd8815b8b6705298beaa384f04fabd459c10bedd",
+                "reference": "bd8815b8b6705298beaa384f04fabd459c10bedd",
                 "shasum": ""
             },
             "require": {
@@ -4707,7 +4707,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-02T15:47:15+00:00"
+            "time": "2020-12-08T17:03:37+00:00"
         },
         {
             "name": "symfony/service-contracts",
