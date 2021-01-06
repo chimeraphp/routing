@@ -1,7 +1,7 @@
 {
     "name": "chimera/routing",
-    "description": "A collection of reusable PSR-15 components that connects Chimera to any framework",
     "type": "library",
+    "description": "A collection of reusable PSR-15 components that connects Chimera to any framework",
     "license": "MIT",
     "authors": [
         {
@@ -9,10 +9,6 @@
             "email": "lcobucci@gmail.com"
         }
     ],
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
     "require": {
         "php": "^7.4 || ^8.0",
         "chimera/foundation": "^0.4@dev",
@@ -33,6 +29,15 @@
         "phpstan/phpstan-strict-rules": "^0.12",
         "phpunit/phpunit": "^9.5"
     },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.4.x-dev"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Chimera\\Routing\\": "src"
@@ -41,11 +46,6 @@
     "autoload-dev": {
         "psr-4": {
             "Chimera\\Routing\\Tests\\": "tests"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.4.x-dev"
         }
     }
 }
