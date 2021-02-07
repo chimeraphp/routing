@@ -35,11 +35,6 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.4.x-dev"
-        }
-    },
     "autoload": {
         "psr-4": {
             "Chimera\\Routing\\": "src"
