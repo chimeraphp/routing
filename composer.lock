@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5632a5652adc49f8dd679f8434e2dbcd",
+    "content-hash": "2fc81777fbc58bb5932d2ac6a28a0520",
     "packages": [
         {
             "name": "brick/math",
@@ -64,16 +64,16 @@
         },
         {
             "name": "chimera/foundation",
-            "version": "dev-master",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "48ce71006e43b726ba5338bf2e183322a6b907da"
+                "reference": "0b6c5f5324981b7c9beb159748f098f78f14d8b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/48ce71006e43b726ba5338bf2e183322a6b907da",
-                "reference": "48ce71006e43b726ba5338bf2e183322a6b907da",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/0b6c5f5324981b7c9beb159748f098f78f14d8b6",
+                "reference": "0b6c5f5324981b7c9beb159748f098f78f14d8b6",
                 "shasum": ""
             },
             "require": {
@@ -90,13 +90,7 @@
                 "phpstan/phpstan-strict-rules": "^0.12",
                 "phpunit/phpunit": "^9.5"
             },
-            "default-branch": true,
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Chimera\\": "src"
@@ -115,7 +109,7 @@
             "description": "Base structure to connect PSR-7 objects to command and query buses",
             "support": {
                 "issues": "https://github.com/chimeraphp/foundation/issues",
-                "source": "https://github.com/chimeraphp/foundation/tree/master"
+                "source": "https://github.com/chimeraphp/foundation/tree/0.4.0"
             },
             "funding": [
                 {
@@ -127,7 +121,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-02-06T21:53:02+00:00"
+            "time": "2021-02-23T20:58:10+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -5548,9 +5542,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "chimera/foundation": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
