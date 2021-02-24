@@ -4,7 +4,7 @@
 [![Latest Stable Version]](https://packagist.org/packages/chimera/routing)
 [![Unstable Version]](https://packagist.org/packages/chimera/routing)
 
-[![Build Status]](https://github.com/chimeraphp/routing/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3Amaster)
+[![Build Status]](https://github.com/chimeraphp/routing/actions?query=workflow%3A%22PHPUnit%20Tests%22+branch%3A0.5.x)
 [![Code Coverage]](https://codecov.io/gh/chimeraphp/routing)
 
 > The term Chimera (_/kɪˈmɪərə/_ or _/kaɪˈmɪərə/_) has come to describe any
@@ -217,7 +217,7 @@ MIT, see [LICENSE].
 [Total Downloads]: https://img.shields.io/packagist/dt/chimera/routing.svg?style=flat-square
 [Latest Stable Version]: https://img.shields.io/packagist/v/chimera/routing.svg?style=flat-square
 [Unstable Version]: https://img.shields.io/packagist/vpre/chimera/routing.svg?style=flat-square
-[Build Status]: https://img.shields.io/github/workflow/status/chimeraphp/routing/PHPUnit%20tests/master?style=flat-square
+[Build Status]: https://img.shields.io/github/workflow/status/chimeraphp/routing/PHPUnit%20tests/0.5.x?style=flat-square
 [Code Coverage]: https://codecov.io/gh/chimeraphp/routing/branch/master/graph/badge.svg
 [Packagist]: http://packagist.org/packages/chimera/routing
 [Composer]: http://getcomposer.org
