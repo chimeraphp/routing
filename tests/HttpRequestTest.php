@@ -54,7 +54,7 @@ final class HttpRequestTest extends TestCase
      */
     public function getDataShouldReturnMergeDataInTheCorrectPrecedence(
         ServerRequestInterface $request,
-        array $data
+        array $data,
     ): void {
         $input = new HttpRequest($request);
 

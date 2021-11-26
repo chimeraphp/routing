@@ -15,15 +15,11 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class ExecuteOnly implements RequestHandlerInterface
 {
-    private ExecuteCommand $action;
-    private ResponseFactoryInterface $responseFactory;
-    private int $statusCode;
-
-    public function __construct(ExecuteCommand $action, ResponseFactoryInterface $responseFactory, int $statusCode)
-    {
-        $this->action          = $action;
-        $this->responseFactory = $responseFactory;
-        $this->statusCode      = $statusCode;
+    public function __construct(
+        private ExecuteCommand $action,
+        private ResponseFactoryInterface $responseFactory,
+        private int $statusCode,
+    ) {
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface

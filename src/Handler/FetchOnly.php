@@ -16,13 +16,8 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class FetchOnly implements RequestHandlerInterface
 {
-    private ExecuteQuery $action;
-    private ResponseFactoryInterface $responseFactory;
-
-    public function __construct(ExecuteQuery $action, ResponseFactoryInterface $responseFactory)
+    public function __construct(private ExecuteQuery $action, private ResponseFactoryInterface $responseFactory)
     {
-        $this->action          = $action;
-        $this->responseFactory = $responseFactory;
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface
@@ -30,7 +25,7 @@ final class FetchOnly implements RequestHandlerInterface
         return new UnformattedResponse(
             $this->responseFactory->createResponse(),
             $this->action->fetch(new HttpRequest($request)),
-            [ExecuteQuery::class => $this->action->getQuery()]
+            [ExecuteQuery::class => $this->action->getQuery()],
         );
     }
 }

@@ -15,6 +15,6 @@ interface UriGenerator
     public function generateRelativePath(
         ServerRequestInterface $request,
         string $routeName,
-        array $substitutions = []
+        array $substitutions = [],
     ): string;
 }

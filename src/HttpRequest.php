@@ -14,17 +14,11 @@ use function is_array;
  */
 final class HttpRequest implements Input
 {
-    private ServerRequestInterface $request;
-
-    public function __construct(ServerRequestInterface $request)
+    public function __construct(private ServerRequestInterface $request)
     {
-        $this->request = $request;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getAttribute(string $name, $default = null)
+    public function getAttribute(string $name, mixed $default = null): mixed
     {
         return $this->request->getAttribute($name, $default);
     }
