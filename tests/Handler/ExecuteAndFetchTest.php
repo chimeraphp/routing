@@ -45,7 +45,7 @@ final class ExecuteAndFetchTest extends TestCase
         $handler = new ExecuteAndFetch(
             new ExecuteCommand($this->bus, $this->creator, stdClass::class),
             new ExecuteQuery($this->bus, $this->creator, stdClass::class),
-            new ResponseFactory()
+            new ResponseFactory(),
         );
 
         $command = (object) ['a' => 'b'];

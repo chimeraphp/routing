@@ -130,7 +130,7 @@ final class CreateOnlyTest extends TestCase
             'info',
             $this->uriGenerator,
             $this->idGenerator,
-            StatusCodeInterface::STATUS_CREATED
+            StatusCodeInterface::STATUS_CREATED,
         );
 
         return $handler->handle($request);

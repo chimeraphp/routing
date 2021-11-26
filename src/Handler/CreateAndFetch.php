@@ -21,34 +21,21 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class CreateAndFetch implements RequestHandlerInterface
 {
-    private ExecuteCommand $writeAction;
-    private ExecuteQuery $readAction;
-    private ResponseFactoryInterface $responseFactory;
-    private string $routeName;
-    private UriGenerator $uriGenerator;
-    private IdentifierGenerator $identifierGenerator;
-
     public function __construct(
-        ExecuteCommand $writeAction,
-        ExecuteQuery $readAction,
-        ResponseFactoryInterface $responseFactory,
-        string $routeName,
-        UriGenerator $uriGenerator,
-        IdentifierGenerator $identifierGenerator
+        private ExecuteCommand $writeAction,
+        private ExecuteQuery $readAction,
+        private ResponseFactoryInterface $responseFactory,
+        private string $routeName,
+        private UriGenerator $uriGenerator,
+        private IdentifierGenerator $identifierGenerator,
     ) {
-        $this->writeAction         = $writeAction;
-        $this->readAction          = $readAction;
-        $this->responseFactory     = $responseFactory;
-        $this->routeName           = $routeName;
-        $this->uriGenerator        = $uriGenerator;
-        $this->identifierGenerator = $identifierGenerator;
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $request = $request->withAttribute(
             IdentifierGenerator::class,
-            $request->getAttribute(IdentifierGenerator::class, $this->identifierGenerator->generate())
+            $request->getAttribute(IdentifierGenerator::class, $this->identifierGenerator->generate()),
         );
 
         $input = new HttpRequest($request);
@@ -58,7 +45,7 @@ final class CreateAndFetch implements RequestHandlerInterface
         return new UnformattedResponse(
             $this->generateResponse($request),
             $this->readAction->fetch($input),
-            [ExecuteQuery::class => $this->readAction->getQuery()]
+            [ExecuteQuery::class => $this->readAction->getQuery()],
         );
     }
 

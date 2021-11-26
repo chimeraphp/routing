@@ -28,7 +28,7 @@ final class MissingRouteDispatchingTest extends TestCase
 
         $middleware->process(
             new ServerRequest([], [], '/testing', 'GET'),
-            $this->createMock(RequestHandlerInterface::class)
+            $this->createMock(RequestHandlerInterface::class),
         );
     }
 }

@@ -18,18 +18,11 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class ExecuteAndFetch implements RequestHandlerInterface
 {
-    private ExecuteCommand $writeAction;
-    private ExecuteQuery $readAction;
-    private ResponseFactoryInterface $responseFactory;
-
     public function __construct(
-        ExecuteCommand $writeAction,
-        ExecuteQuery $readAction,
-        ResponseFactoryInterface $responseFactory
+        private ExecuteCommand $writeAction,
+        private ExecuteQuery $readAction,
+        private ResponseFactoryInterface $responseFactory,
     ) {
-        $this->writeAction     = $writeAction;
-        $this->readAction      = $readAction;
-        $this->responseFactory = $responseFactory;
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface
@@ -41,7 +34,7 @@ final class ExecuteAndFetch implements RequestHandlerInterface
         return new UnformattedResponse(
             $this->responseFactory->createResponse(),
             $this->readAction->fetch($input),
-            [ExecuteQuery::class => $this->readAction->getQuery()]
+            [ExecuteQuery::class => $this->readAction->getQuery()],
         );
     }
 }

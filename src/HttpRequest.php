@@ -14,11 +14,8 @@ use function is_array;
  */
 final class HttpRequest implements Input
 {
-    private ServerRequestInterface $request;
-
-    public function __construct(ServerRequestInterface $request)
+    public function __construct(private ServerRequestInterface $request)
     {
-        $this->request = $request;
     }
 
     /**

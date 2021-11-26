@@ -44,7 +44,7 @@ final class ExecuteOnlyTest extends TestCase
         $handler = new ExecuteOnly(
             new ExecuteCommand($this->bus, $this->creator, stdClass::class),
             new ResponseFactory(),
-            StatusCodeInterface::STATUS_NO_CONTENT
+            StatusCodeInterface::STATUS_NO_CONTENT,
         );
 
         $command = (object) ['a' => 'b'];

@@ -43,7 +43,7 @@ final class FetchOnlyTest extends TestCase
     {
         $handler = new FetchOnly(
             new ExecuteQuery($this->bus, $this->creator, stdClass::class),
-            new ResponseFactory()
+            new ResponseFactory(),
         );
 
         $query = (object) ['a' => 'b'];

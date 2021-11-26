@@ -139,7 +139,7 @@ final class CreateAndFetchTest extends TestCase
             new ResponseFactory(),
             'info',
             $this->uriGenerator,
-            $this->idGenerator
+            $this->idGenerator,
         );
 
         return $handler->handle($request);

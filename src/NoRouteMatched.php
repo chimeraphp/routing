@@ -16,7 +16,7 @@ final class NoRouteMatched extends RuntimeException implements Exception
     {
         return new self(
             sprintf('Cannot %s %s', $request->getMethod(), $request->getUri()),
-            StatusCodeInterface::STATUS_NOT_FOUND
+            StatusCodeInterface::STATUS_NOT_FOUND,
         );
     }
 }
