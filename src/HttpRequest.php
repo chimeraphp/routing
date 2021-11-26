@@ -18,10 +18,7 @@ final class HttpRequest implements Input
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getAttribute(string $name, $default = null)
+    public function getAttribute(string $name, mixed $default = null): mixed
     {
         return $this->request->getAttribute($name, $default);
     }
