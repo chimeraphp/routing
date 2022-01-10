@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e40960fb6d77f8b1064ec27abc3edd3",
+    "content-hash": "94e299ef259ddf760122febdfcfd5e34",
     "packages": [
         {
             "name": "brick/math",
@@ -263,16 +263,16 @@
         },
         {
             "name": "middlewares/negotiation",
-            "version": "v2.0.2",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/middlewares/negotiation.git",
-                "reference": "1b3d903b17f2193adb4319fb7ddbb98e6b9ab33c"
+                "reference": "82a79066b2a78b8fa5fb4210b6f84fe4b9af70e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/middlewares/negotiation/zipball/1b3d903b17f2193adb4319fb7ddbb98e6b9ab33c",
-                "reference": "1b3d903b17f2193adb4319fb7ddbb98e6b9ab33c",
+                "url": "https://api.github.com/repos/middlewares/negotiation/zipball/82a79066b2a78b8fa5fb4210b6f84fe4b9af70e5",
+                "reference": "82a79066b2a78b8fa5fb4210b6f84fe4b9af70e5",
                 "shasum": ""
             },
             "require": {
@@ -314,9 +314,9 @@
             ],
             "support": {
                 "issues": "https://github.com/middlewares/negotiation/issues",
-                "source": "https://github.com/middlewares/negotiation/tree/v2.0.2"
+                "source": "https://github.com/middlewares/negotiation/tree/v2.1.0"
             },
-            "time": "2020-12-02T00:06:29+00:00"
+            "time": "2022-01-08T13:06:20+00:00"
         },
         {
             "name": "middlewares/utils",
