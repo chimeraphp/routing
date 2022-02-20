@@ -6,3 +6,4 @@
 /README.md      export-ignore
 /composer.lock  export-ignore
 /Makefile       export-ignore
+/composer-unused.php export-ignore
