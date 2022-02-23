@@ -19,11 +19,12 @@ use stdClass;
 /** @coversDefaultClass \Chimera\Routing\Handler\ExecuteAndFetch */
 final class ExecuteAndFetchTest extends TestCase
 {
-    /** @var ServiceBus&MockObject */
-    private ServiceBus $bus;
-
-    /** @var MessageCreator&MockObject */
-    private MessageCreator $creator;
+    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceBefore -- PHPCS isn't ready for PHP 8.1 features yet
+    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceAfter
+    private ServiceBus&MockObject $bus;
+    private MessageCreator&MockObject $creator;
+    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceBefore
+    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceAfter
 
     /** @before */
     public function createDependencies(): void

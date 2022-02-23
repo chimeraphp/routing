@@ -5,4 +5,5 @@ use ComposerUnused\ComposerUnused\Configuration\Configuration;
 use ComposerUnused\ComposerUnused\Configuration\NamedFilter;
 
 return static fn(Configuration $config): Configuration => $config
+    ->addNamedFilter(NamedFilter::fromString('lcobucci/content-negotiation-middleware')) // this is a false-positive
     ->addNamedFilter(NamedFilter::fromString('middlewares/negotiation'));

@@ -22,12 +22,12 @@ use Psr\Http\Server\RequestHandlerInterface;
 final class CreateAndFetch implements RequestHandlerInterface
 {
     public function __construct(
-        private ExecuteCommand $writeAction,
-        private ExecuteQuery $readAction,
-        private ResponseFactoryInterface $responseFactory,
-        private string $routeName,
-        private UriGenerator $uriGenerator,
-        private IdentifierGenerator $identifierGenerator,
+        private readonly ExecuteCommand $writeAction,
+        private readonly ExecuteQuery $readAction,
+        private readonly ResponseFactoryInterface $responseFactory,
+        private readonly string $routeName,
+        private readonly UriGenerator $uriGenerator,
+        private readonly IdentifierGenerator $identifierGenerator,
     ) {
     }
 
@@ -45,7 +45,7 @@ final class CreateAndFetch implements RequestHandlerInterface
         return new UnformattedResponse(
             $this->generateResponse($request),
             $this->readAction->fetch($input),
-            [ExecuteQuery::class => $this->readAction->getQuery()],
+            [ExecuteQuery::class => $this->readAction->query],
         );
     }
 

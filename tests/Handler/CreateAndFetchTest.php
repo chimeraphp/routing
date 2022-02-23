@@ -25,19 +25,15 @@ use stdClass;
 /** @coversDefaultClass \Chimera\Routing\Handler\CreateAndFetch */
 final class CreateAndFetchTest extends TestCase
 {
-    /** @var ServiceBus&MockObject */
-    private ServiceBus $bus;
-
-    /** @var MessageCreator&MockObject */
-    private MessageCreator $creator;
-
-    /** @var UriGenerator&MockObject */
-    private UriGenerator $uriGenerator;
-
-    /** @var IdentifierGenerator&MockObject */
-    private IdentifierGenerator $idGenerator;
-
+    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceBefore -- PHPCS isn't ready for PHP 8.1 features yet
+    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceAfter
+    private ServiceBus&MockObject $bus;
+    private MessageCreator&MockObject $creator;
+    private UriGenerator&MockObject $uriGenerator;
+    private IdentifierGenerator&MockObject $idGenerator;
     private UuidInterface $id;
+    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceBefore
+    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceAfter
 
     /** @before */
     public function createDependencies(): void

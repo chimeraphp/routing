@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "chimera/foundation": "^0.5.x-dev",
+        "php": "^8.1",
+        "chimera/foundation": "^1.0.x-dev",
         "fig/http-message-util": "^1.1",
         "lcobucci/content-negotiation-middleware": "^3.1",
         "middlewares/negotiation": "^2.1",

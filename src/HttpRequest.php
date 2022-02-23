@@ -14,7 +14,7 @@ use function is_array;
  */
 final class HttpRequest implements Input
 {
-    public function __construct(private ServerRequestInterface $request)
+    public function __construct(private readonly ServerRequestInterface $request)
     {
     }
 
