@@ -45,7 +45,7 @@ final class CreateAndFetch implements RequestHandlerInterface
         return new UnformattedResponse(
             $this->generateResponse($request),
             $this->readAction->fetch($input),
-            [ExecuteQuery::class => $this->readAction->getQuery()],
+            [ExecuteQuery::class => $this->readAction->query],
         );
     }
 

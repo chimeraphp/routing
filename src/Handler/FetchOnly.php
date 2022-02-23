@@ -25,7 +25,7 @@ final class FetchOnly implements RequestHandlerInterface
         return new UnformattedResponse(
             $this->responseFactory->createResponse(),
             $this->action->fetch(new HttpRequest($request)),
-            [ExecuteQuery::class => $this->action->getQuery()],
+            [ExecuteQuery::class => $this->action->query],
         );
     }
 }
