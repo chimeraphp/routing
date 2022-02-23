@@ -19,12 +19,12 @@ use Psr\Http\Server\RequestHandlerInterface;
 final class CreateOnly implements RequestHandlerInterface
 {
     public function __construct(
-        private ExecuteCommand $action,
-        private ResponseFactoryInterface $responseFactory,
-        private string $routeName,
-        private UriGenerator $uriGenerator,
-        private IdentifierGenerator $identifierGenerator,
-        private int $statusCode,
+        private readonly ExecuteCommand $action,
+        private readonly ResponseFactoryInterface $responseFactory,
+        private readonly string $routeName,
+        private readonly UriGenerator $uriGenerator,
+        private readonly IdentifierGenerator $identifierGenerator,
+        private readonly int $statusCode,
     ) {
     }
 

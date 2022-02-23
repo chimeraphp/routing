@@ -16,9 +16,9 @@ use Psr\Http\Server\RequestHandlerInterface;
 final class ExecuteOnly implements RequestHandlerInterface
 {
     public function __construct(
-        private ExecuteCommand $action,
-        private ResponseFactoryInterface $responseFactory,
-        private int $statusCode,
+        private readonly ExecuteCommand $action,
+        private readonly ResponseFactoryInterface $responseFactory,
+        private readonly int $statusCode,
     ) {
     }
 

@@ -19,9 +19,9 @@ use Psr\Http\Server\RequestHandlerInterface;
 final class ExecuteAndFetch implements RequestHandlerInterface
 {
     public function __construct(
-        private ExecuteCommand $writeAction,
-        private ExecuteQuery $readAction,
-        private ResponseFactoryInterface $responseFactory,
+        private readonly ExecuteCommand $writeAction,
+        private readonly ExecuteQuery $readAction,
+        private readonly ResponseFactoryInterface $responseFactory,
     ) {
     }
 

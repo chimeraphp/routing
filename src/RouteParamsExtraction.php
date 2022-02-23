@@ -10,7 +10,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class RouteParamsExtraction implements MiddlewareInterface
 {
-    public function __construct(private RouteParamsExtractor $extractor)
+    public function __construct(private readonly RouteParamsExtractor $extractor)
     {
     }
 

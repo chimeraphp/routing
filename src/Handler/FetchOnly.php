@@ -16,8 +16,10 @@ use Psr\Http\Server\RequestHandlerInterface;
  */
 final class FetchOnly implements RequestHandlerInterface
 {
-    public function __construct(private ExecuteQuery $action, private ResponseFactoryInterface $responseFactory)
-    {
+    public function __construct(
+        private readonly ExecuteQuery $action,
+        private readonly ResponseFactoryInterface $responseFactory,
+    ) {
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface
