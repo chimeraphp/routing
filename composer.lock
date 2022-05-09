@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d4a0354647efc5f5a8c67111620e966",
+    "content-hash": "50e3f3bcad6e8107d823faa9e3b6c9e5",
     "packages": [
         {
             "name": "brick/math",
@@ -1677,16 +1677,16 @@
         },
         {
             "name": "laminas/laminas-diactoros",
-            "version": "2.9.2",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-diactoros.git",
-                "reference": "07475df6b4bf6277ae8b9cbbc94d0ac6fee5e726"
+                "reference": "a3f03b3c158a3a7014c6ba553b0cb83bf7da19c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/07475df6b4bf6277ae8b9cbbc94d0ac6fee5e726",
-                "reference": "07475df6b4bf6277ae8b9cbbc94d0ac6fee5e726",
+                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/a3f03b3c158a3a7014c6ba553b0cb83bf7da19c4",
+                "reference": "a3f03b3c158a3a7014c6ba553b0cb83bf7da19c4",
                 "shasum": ""
             },
             "require": {
@@ -1772,7 +1772,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-04-06T17:37:15+00:00"
+            "time": "2022-05-04T15:16:15+00:00"
         },
         {
             "name": "lcobucci/coding-standard",
