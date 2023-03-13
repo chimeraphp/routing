@@ -7,12 +7,14 @@ use Chimera\ExecuteCommand;
 use Chimera\IdentifierGenerator;
 use Chimera\MessageCreator;
 use Chimera\Routing\Handler\CreateOnly;
+use Chimera\Routing\HttpRequest;
 use Chimera\Routing\UriGenerator;
 use Chimera\ServiceBus;
 use Fig\Http\Message\StatusCodeInterface;
 use Laminas\Diactoros\ResponseFactory;
 use Laminas\Diactoros\ServerRequest;
 use Lcobucci\ContentNegotiation\UnformattedResponse;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -21,20 +23,17 @@ use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use stdClass;
 
-/** @coversDefaultClass \Chimera\Routing\Handler\CreateOnly */
+#[PHPUnit\CoversClass(CreateOnly::class)]
+#[PHPUnit\UsesClass(HttpRequest::class)]
 final class CreateOnlyTest extends TestCase
 {
-    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceBefore -- PHPCS isn't ready for PHP 8.1 features yet
-    // phpcs:disable PSR12.Operators.OperatorSpacing.NoSpaceAfter
     private ServiceBus&MockObject $bus;
     private MessageCreator&MockObject $creator;
     private UriGenerator&MockObject $uriGenerator;
     private IdentifierGenerator&MockObject $idGenerator;
     private UuidInterface $id;
-    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceBefore
-    // phpcs:enable PSR12.Operators.OperatorSpacing.NoSpaceAfter
 
-    /** @before */
+    #[PHPUnit\Before]
     public function createDependencies(): void
     {
         $this->bus          = $this->createMock(ServiceBus::class);
@@ -44,15 +43,7 @@ final class CreateOnlyTest extends TestCase
         $this->id           = Uuid::uuid4();
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::handle()
-     * @covers ::generateResponse()
-     *
-     * @uses \Chimera\Routing\HttpRequest
-     */
+    #[PHPUnit\Test]
     public function handleShouldExecuteTheCommandAndReturnAnEmptyResponse(): void
     {
         $request = new ServerRequest();
@@ -81,15 +72,7 @@ final class CreateOnlyTest extends TestCase
         self::assertSame('/testing/' . $this->id, $response->getHeaderLine('Location'));
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::handle()
-     * @covers ::generateResponse()
-     *
-     * @uses \Chimera\Routing\HttpRequest
-     */
+    #[PHPUnit\Test]
     public function handleShouldPreserveTheRequestGeneratedIdIfAlreadyPresent(): void
     {
         $request = (new ServerRequest())->withAttribute(IdentifierGenerator::class, $this->id);

@@ -7,18 +7,14 @@ use Chimera\Routing\RouteParamsExtraction;
 use Chimera\Routing\RouteParamsExtractor;
 use Laminas\Diactoros\Response;
 use Laminas\Diactoros\ServerRequest;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Server\RequestHandlerInterface;
 
-/** @coversDefaultClass \Chimera\Routing\RouteParamsExtraction */
+#[PHPUnit\CoversClass(RouteParamsExtraction::class)]
 final class RouteParamsExtractionTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::process()
-     */
+    #[PHPUnit\Test]
     public function processShouldUseExtractorAndAddResultAsRequestAttribute(): void
     {
         $request  = new ServerRequest();

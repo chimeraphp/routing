@@ -6,18 +6,14 @@ namespace Chimera\Routing\Tests;
 use Chimera\Routing\HttpRequest;
 use Chimera\Routing\RouteParamsExtraction;
 use Laminas\Diactoros\ServerRequest;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 
-/** @coversDefaultClass \Chimera\Routing\HttpRequest */
+#[PHPUnit\CoversClass(HttpRequest::class)]
 final class HttpRequestTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::getAttribute()
-     */
+    #[PHPUnit\Test]
     public function getAttributeShouldReturnAttributeConfiguredInThePSR7Request(): void
     {
         $request = (new ServerRequest())->withAttribute('test', 1);
@@ -28,13 +24,7 @@ final class HttpRequestTest extends TestCase
         self::assertSame(2, $input->getAttribute('test2', 2));
     }
 
-    /**
-     * @test
-     *
-     * @covers ::__construct()
-     * @covers ::getData()
-     * @covers ::getContext()
-     */
+    #[PHPUnit\Test]
     public function getDataShouldReturnAnEmptyArrayIfRequestDoesNotHaveAnyInfo(): void
     {
         $input = new HttpRequest(new ServerRequest());
@@ -42,16 +32,9 @@ final class HttpRequestTest extends TestCase
         self::assertSame([], $input->getData());
     }
 
-    /**
-     * @test
-     * @dataProvider dataMergingPossibilities
-     *
-     * @covers ::__construct()
-     * @covers ::getData()
-     * @covers ::getContext()
-     *
-     * @param array<string, string|int> $data
-     */
+    /** @param array<string, string|int> $data */
+    #[PHPUnit\Test]
+    #[PHPUnit\DataProvider('dataMergingPossibilities')]
     public function getDataShouldReturnMergeDataInTheCorrectPrecedence(
         ServerRequestInterface $request,
         array $data,
@@ -62,7 +45,7 @@ final class HttpRequestTest extends TestCase
     }
 
     /** @return array<string, array<ServerRequest|array<string, string|int>>> */
-    public function dataMergingPossibilities(): array
+    public static function dataMergingPossibilities(): array
     {
         $base = new ServerRequest();
 

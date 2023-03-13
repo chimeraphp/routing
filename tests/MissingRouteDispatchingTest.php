@@ -6,18 +6,15 @@ namespace Chimera\Routing\Tests;
 use Chimera\Routing\MissingRouteDispatching;
 use Chimera\Routing\NoRouteMatched;
 use Laminas\Diactoros\ServerRequest;
+use PHPUnit\Framework\Attributes as PHPUnit;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Server\RequestHandlerInterface;
 
-/** @coversDefaultClass \Chimera\Routing\MissingRouteDispatching */
+#[PHPUnit\CoversClass(MissingRouteDispatching::class)]
+#[PHPUnit\CoversClass(NoRouteMatched::class)]
 final class MissingRouteDispatchingTest extends TestCase
 {
-    /**
-     * @test
-     *
-     * @covers ::process
-     * @covers \Chimera\Routing\NoRouteMatched::fromRequest
-     */
+    #[PHPUnit\Test]
     public function processShouldThrowAnExceptionWithRequestInformation(): void
     {
         $middleware = new MissingRouteDispatching();
