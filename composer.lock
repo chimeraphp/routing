@@ -68,12 +68,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chimeraphp/foundation.git",
-                "reference": "ed90c686682e0124639f9060cc13568bbe67322e"
+                "reference": "97f836fa70c0b245d408a742ae897f5069083f23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/ed90c686682e0124639f9060cc13568bbe67322e",
-                "reference": "ed90c686682e0124639f9060cc13568bbe67322e",
+                "url": "https://api.github.com/repos/chimeraphp/foundation/zipball/97f836fa70c0b245d408a742ae897f5069083f23",
+                "reference": "97f836fa70c0b245d408a742ae897f5069083f23",
                 "shasum": ""
             },
             "require": {
@@ -122,7 +122,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-03-13T20:14:27+00:00"
+            "time": "2023-03-19T19:39:48+00:00"
         },
         {
             "name": "fig/http-message-util",
