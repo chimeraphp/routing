@@ -22,7 +22,7 @@
     },
     "require-dev": {
         "infection/infection": "^0.26.19",
-        "laminas/laminas-diactoros": "^2.24.2",
+        "laminas/laminas-diactoros": "^3.0.0",
         "lcobucci/coding-standard": "^9.0",
         "phpstan/extension-installer": "^1.2",
         "phpstan/phpstan": "^1.10.7",
