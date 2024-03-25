@@ -21,7 +21,7 @@
         "psr/http-server-middleware": "^1.0.1"
     },
     "require-dev": {
-        "infection/infection": "^0.26.19",
+        "infection/infection": "^0.28.0",
         "laminas/laminas-diactoros": "^2.24.2",
         "lcobucci/coding-standard": "^9.0",
         "phpstan/extension-installer": "^1.2",
